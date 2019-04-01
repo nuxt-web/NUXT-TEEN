@@ -1,0 +1,61 @@
+@import './../../common/variable';
+
+.content {
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    color: #ffffff;
+    .movie {
+        width: 100%;
+        height: 100%;
+    }
+    .info {
+        width: 100%;
+        height: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // background: blue;
+        .focus {
+            position: absolute;
+            top: 3rem;
+            right: 1rem;
+            padding: .2rem .5rem;
+            background: #FFDB4F;
+            font-size: .75rem;
+            border-radius: .5rem;
+        }
+        .back {
+            padding: .5rem .2rem;
+        }
+        .title {
+            padding: 0 .5rem;
+            margin: 1.5rem 0 .2rem;
+            font-size: .8rem;
+        }
+        .disc {
+            padding: .5rem;
+            .avatar {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border: 1px solid $color-text-primary;
+                overflow: hidden;
+                display: inline-block;
+                margin-left: -.75rem;
+                &:first-child {
+                    margin-left: .25rem;
+                }
+                .per-avatar {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .text {
+                font-size: .7rem;
+                display: inline-block;
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@import '../../common/variable';
+.post-holder {
+    padding: 0 .5rem;
+    .post {
+        margin: .75rem auto;
+        background: #ffffff;
+        border-radius: .5rem;
+        font-size: .75rem;
+        padding: .75rem;
+        .user {
+            // padding: 0 .75rem;
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap; 
+            .avatar {
+                width: 1.75rem;
+                height: 1.75rem;
+                border: 1px solid #cccccc;
+                border-radius: 50%;
+            }
+            .post-owner {
+                flex: 1;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: .5rem;
+                align-items: center;
+                .name {
+                    width: 100%;
+                    font-size: .75rem;
+                }
+                .time {
+                    width: 100%;
+                    font-size: .6rem;
+                    color: $color-text-light;
+                }
+            }
+            .like {
+                font-size: 1rem;
+            }
+        }
+        .content {
+            padding: .75rem 0;
+            font-size: .75rem;
+        }
+        .label {
+            // margin-left: .5rem;
+            color: #FF9933;
+            font-size: .6rem;
+            background: rgba(255, 219, 79, .3);
+            display: inline-block;
+            padding: .2rem .5rem;
+            border-radius: .5rem;
+        }
+        .other {
+            margin-top: .75rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .like {
+                position: relative;
+                .circle {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: .6rem;
+                    height: .6rem;
+                    border-radius: 50%;
+                    background: #FFDB4F;
+                    opacity: .5;
+                }
+            }
+            .like, .reply {
+                font-size: .9rem;
+            }
+            .num {
+                // margin-left: .1rem;
+                font-size: .75rem;
+            }
+        }
+    }
+}
