@@ -84,18 +84,20 @@ export default {
 //     right: 0;
 // }
 .graphic-intro {
-    height: 2rem;
+    padding: .5rem;
+    height: 3rem;
     line-height: 1rem;
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 10px;
+    // padding: 0 10px;
     display: -webkit-box;
     word-break: break-all;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     font-size: .75rem;
+    border-bottom: 1px solid #cccccc;
 }
 </style>
 
