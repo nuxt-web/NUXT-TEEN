@@ -17,6 +17,8 @@ $ npm start
 
 # generate static project
 $ npm run generate
+
+# 安装第三方包，需在nuxt.config.js中plugins引入入口文件
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

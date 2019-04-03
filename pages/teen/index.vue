@@ -3,7 +3,7 @@
     <!-- 页面头部 -->
     <teen-header redBg="true">
       <div class="logo" slot="title">
-        <img src="../static/images/logo-mini-3.png">
+        <img src="../../static/images/logo-mini-3.png">
       </div>
     </teen-header>
 
@@ -27,12 +27,12 @@
 </template>
 
 <script>
-  import TeenHeader from './../components/global/header'
-  import TeenScroller from "../components/global/teenScroller";
-  import SwiperBanner from "../components/global/swiperBanner";
-  import MovieList from "../components/movie/MovieList"
-  import MovieSwiper from "../components/movie/MovieSwiper"
-  import TeenFooter from "../components/global/footer"
+  import TeenHeader from './../../components/global/header'
+  import TeenScroller from "../../components/global/teenScroller";
+  import SwiperBanner from "../../components/global/swiperBanner";
+  import MovieList from "../../components/movie/MovieList"
+  import MovieSwiper from "../../components/movie/MovieSwiper"
+  import TeenFooter from "../../components/global/footer"
 
   export default {
     name: 'Game',
@@ -63,21 +63,21 @@
         // 首页信息数据
         banner: [
           {
-            img_url: require('../static/images/BLUE2.jpg')
+            img_url: require('../../static/images/BLUE2.jpg')
           },
           {
-            img_url: require('../static/images/CM.jpg')
+            img_url: require('../../static/images/CM.jpg')
           },
           {
-            img_url: require('../static/images/MYHERO.jpg')
+            img_url: require('../../static/images/MYHERO.jpg')
           },
           {
-            img_url: require('../static/images/SPIDER.jpg')
+            img_url: require('../../static/images/SPIDER.jpg')
           }
         ],
         movieList: [
           {
-            url: require('../static/images/BLUE1.jpg'),
+            url: require('../../static/images/BLUE1.jpg'),
             title: '比悲伤更悲伤的故事',
             time: '2019-3-14',
             slogan: '唯一观影建议：请带着纸巾',
@@ -86,7 +86,7 @@
             ]
           },
           {
-            url: require('../static/images/BLUE1.jpg'),
+            url: require('../../static/images/BLUE1.jpg'),
             title: '比悲伤更悲伤的故事',
             time: '2019-3-14',
             slogan: '唯一观影建议：请带着纸巾',
@@ -104,7 +104,7 @@
             android_dst_type: 1,
             app_id: 100002,
             compatible_os: '1|2',
-            img_url: require('../static/images/BLUE1.jpg'),
+            img_url: require('../../static/images/BLUE1.jpg'),
             news_id: 0,
             web_dst_url: 'http://m.rastargame.com/dist/news/4110'
           },
@@ -118,7 +118,7 @@
             compatible_os: '1|2',
             id: 39,
             img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../static/images/COMEDY.jpg'),
+            img_url: require('../../static/images/COMEDY.jpg'),
             news_id: 0,
             web_dst_url: 'http://m.rastargame.com/dist/news/4110'
           },
@@ -132,7 +132,7 @@
             compatible_os: '1|2',
             id: 39,
             img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../static/images/DES.jpg'),
+            img_url: require('../../static/images/DES.jpg'),
             news_id: 0,
             web_dst_url: 'http://m.rastargame.com/dist/news/4110'
           },
@@ -146,7 +146,7 @@
             compatible_os: '1|2',
             id: 39,
             img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../static/images/KISS.jpg'),
+            img_url: require('../../static/images/KISS.jpg'),
             news_id: 0,
             web_dst_url: 'http://m.rastargame.com/dist/news/4110'
           },
@@ -160,7 +160,7 @@
             compatible_os: '1|2',
             id: 39,
             img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../static/images/LIFTRES.jpg'),
+            img_url: require('../../static/images/LIFTRES.jpg'),
             news_id: 0,
             web_dst_url: 'http://m.rastargame.com/dist/news/4110'
           },
@@ -174,7 +174,7 @@
             compatible_os: '1|2',
             id: 39,
             img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../static/images/VEMON.jpg'),
+            img_url: require('../../static/images/VEMON.jpg'),
             news_id: 0,
             web_dst_url: 'http://m.rastargame.com/dist/news/4110'
           }
@@ -364,22 +364,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-  .page-wrapper {
-    position: fixed;
-    width: 100%;
-    /*height: calc(100% - 2.4rem);*/
-    height: 100%;
-    padding-top: 2.4rem;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-  &::after {
-     content: '';
-     height: 2.4rem;
-     width: 100%;
-   }
-  }
-</style>

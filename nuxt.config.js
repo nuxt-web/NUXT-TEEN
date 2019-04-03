@@ -32,14 +32,27 @@ module.exports = {
     {
       src: '~assets/css/style.scss',
       lang: 'scss'
-    }
+    },
+    { src: "swiper/dist/css/swiper.css" }
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    {
+      src: '~/plugins/vue-scroller.js',
+      ssr: false
+    },
+    {
+      src: '~/plugins/vue-awesome-swiper.js',
+      ssr: false
+    },
+    {
+      src: '~/plugins/vue-video-player.js',
+      ssr: false
+    }
   ],
 
   /*
@@ -53,12 +66,12 @@ module.exports = {
   */
   build: {
     transpile: [/^element-ui/],
-    
+
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }

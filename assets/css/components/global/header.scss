@@ -1,0 +1,111 @@
+@import './../../common/variable';
+.rastar-header {
+    height: 2.4rem;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: #FFDE02;
+    .header-content {
+        height: 2.4rem;
+        position: fixed;
+        width: 100%;
+    }
+    // 透明背景
+    &.rastar-header-transparent{
+        background: transparent;
+        .rastar-title {
+           color: white;
+        }
+        .rastar-filter {
+            color: white;
+        }
+        .rastar-back {
+            color: white;
+        }
+    }
+    // 填充背景
+    &.rastar-header-fill{
+        //@include gradient($color-primary-deep, $color-primary-light);
+        @include gradient(#FFDE02, yellow);
+        .rastar-title {
+           color:black;
+        }
+        .rastar-filter {
+            color:black;
+        }
+        .rastar-back {
+            color: black;
+        }
+    }
+    // 头部标题
+    .rastar-title {
+        color: black;
+        max-width: 80%;
+        margin: 0 auto;
+        .logo {
+            width: 4.2rem;
+            height: 1.25rem;
+            margin: .5rem auto;
+            img {
+                width: inherit;
+                height: inherit;
+                display: block;
+            }
+        }
+        .title {
+            text-align: center;
+            line-height: 2.4rem;
+            font-size: .8rem;
+            //@include ellipsis(1);
+            i {
+                margin-right: .25rem;
+            }
+            img {
+                width: 1.4rem;
+                height: 1.4rem;
+                border-radius: .25rem;
+                display: block;
+                margin: .5rem auto;
+
+            }
+        }
+    }
+    // 右侧按钮
+    .rastar-filter {
+        position: absolute;
+        right: .725rem;
+        top: 0;
+        .filter {
+            font-size: .65rem;
+            line-height: 2.4rem;
+            color: white;
+            &.valid{
+                color: white;
+            }
+            img{
+                width:0.9rem;
+                height: 0.7rem;
+                text-align: center;
+                padding: 0 0.15rem;
+            }
+
+        }
+    }
+    // 返回按钮
+    .rastar-back {
+        position: absolute;
+        line-height: 2.4rem;
+        left: .725rem;
+        top: 0;
+        font-size: .9rem;
+        color: white;
+        img {
+            width: .9rem;
+            height: .9rem;
+            display: block;
+            margin-top: .75rem;
+        }
+    }
+}

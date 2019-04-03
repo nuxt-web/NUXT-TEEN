@@ -1,0 +1,22 @@
+.page-wrapper.full ._v-container {
+    height: 100% !important;
+}
+
+._v-container{
+    height: calc(100% - 2.4rem) !important;
+    // overflow:hidden;
+}
+._v-content {
+    // overflow: hidden;
+    min-height: 100%;
+    &:before {
+        content: '';
+        height: 0;
+    }
+}
+
+.no-data-text{
+    font-size: .5rem;
+    height: 2rem;
+    line-height: 2rem;
+}

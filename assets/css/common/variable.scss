@@ -8,3 +8,58 @@ $color-primary: #FFDB4F;
 $color-deep-primary: #FF9933;
 $color-text-blue: #4f98d4;
 $color-text-red: rgb(233, 27, 20);
+
+
+$color-primary: #FE5848;
+$color-primary-deep: #F55848;
+$color-primary-light: #DF333B;
+$color-caret:#FF5F61;
+$color-shadow: #999999;
+$color-border: #ededed;
+$color-disabled: #d2d2d2;
+$color-input: #d2d2d2;
+$color-white: #ffffff;
+$color-vip: #FA8D4F;
+$color-text-deep: #000000;
+$color-text-mid: #505050;
+$color-text-light: #969696;
+$color-text-assist: #ccc;
+$color-text-btn: #4B749D;
+$color-red: #F95B80;
+$color-yellow: #FEBC6A;
+$color-official-name: #D33A31;
+$color-lottery-bg: #F96973;
+$color-lottery-golden-font: #FEE18D;
+$color-lottery-golden-bg: #F5A618;
+$color-lottery-award-font: #98520E;
+
+
+$border-radius: 20%;
+
+@mixin gradient($left, $right) {
+  background: $left;
+  background: -webkit-linear-gradient(left, $left, $right);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, $left, $right);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, $left, $right);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, $left, $right);
+  /* 标准的语法 */
+}
+
+
+/**
+  * 超出文本补充省略号
+  */
+
+@mixin ellipsis($colums) {
+  display: -webkit-box;
+  -webkit-line-clamp: $colums;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow:ellipsis;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}

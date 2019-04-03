@@ -1,0 +1,61 @@
+@import '../../common/variable';
+.game-detail-tabs {
+  height: 2.25rem;
+  width: 100%;
+}
+
+.game-detail-tab {
+  height: 2.25rem;
+  width: 100%;
+  margin-bottom: .3rem;
+  //@include gradient(#FFDE02, yellow);
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .75rem;
+  box-sizing: border-box;
+  margin-top: .25rem;
+  border-bottom: 1px solid $color-border;
+  position: relative;
+  &.game-detail-tab-top{
+    margin-top: 0;
+    z-index: 888;
+  }
+  .tab-item {
+    position: relative;
+    font-size: .7rem;
+    line-height: 2.25rem;
+    color: $color-text-deep;
+    padding: 0 .25rem;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    &:after {
+      content: attr(data-num);
+      color: $color-text-deep;
+      font-size: .5rem;
+      vertical-align: super;
+      // @include gradient($color-text-red, $color-text-yellow);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+    }
+    &.active {
+      color: #FFDE02;
+      &:after {
+        color: #FFDE02;
+        @include gradient(#FFDE02, yellow);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+  .tab-paging {
+    position: absolute;
+    height: .1rem;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    background: #FFDE02;
+    transition:  width .2s linear, left .2s linear;
+  }
+}

@@ -1,0 +1,293 @@
+@import './../../common/variable';
+
+
+.video-item{
+  height: 11.95rem;
+  margin: .5rem .75rem;
+  border-radius: .25rem;
+  overflow: hidden;
+  background: $color-white;
+  box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.42);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+
+
+  .video-box{
+    width: 100%;
+    height: 9.25rem;
+    min-height: 1rem;
+    background:#000000;
+    overflow: hidden;
+  }
+
+  .video-text{
+    height: 2.7rem;
+    font-size: .7rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .25rem .5rem .75rem .75rem;
+
+    .title{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space:nowrap
+    }
+
+    .video-info{
+      display: flex;
+      justify-content: space-between;
+      font-size: .55rem;
+      color: $color-text-light;
+      line-height: .75rem;
+      height: .75rem;
+
+
+      .options{
+        display: flex;
+        width: 3rem;
+        height: .75rem;
+        justify-content: space-between;
+        .comment {
+          i {
+            margin-right: .25rem;
+          }
+        }
+        .like{
+          .active{
+            background:linear-gradient(0deg,rgba(249,91,128,1),rgba(254,188,106,1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+          }
+        }
+      }
+
+      span{
+        font-size: .55rem;
+        color:#969696
+      }
+    }
+  }
+}
+// 资讯列表项目
+.news-item {
+  height: 5.5rem;
+  margin: .5rem .75rem;
+  border-radius: .25rem;
+  background: $color-white;
+  display: flex;
+  justify-content: space-between;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+  box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.42);
+  .news-img {
+    position: relative;
+    margin: .75rem;
+    background: #ddd;
+    width: 8rem;
+    height: 4rem;
+    img {
+      position: relative;
+      z-index: 99;
+      width: 8rem;
+      height: 4rem;
+      display: block;
+    }
+  }
+  .news-info {
+    width: 7rem;
+    margin: .75rem .5rem .75rem 0;
+    .des {
+      font-size: .65rem;
+      line-height: .9rem;
+      color: $color-text-deep;
+      height: 2.7rem;
+      margin-bottom: .55rem;
+      @include ellipsis(3);
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      font-size: .55rem;
+      color: $color-text-light;
+      line-height: .75rem;
+      height: .75rem;
+      .comment {
+        i {
+          margin-right: .25rem;
+        }
+      }
+    }
+  }
+}
+
+// 咨询详情标题栏
+.title-ellipsis{
+  @include ellipsis(1)
+}
+
+// 资讯详情
+.news-detail {
+  // 顶部游戏信息
+  height: calc(100% - 2.8rem);
+  .game-info {
+    height: 2.2rem;
+    border-bottom: .025rem solid $color-border;
+    border-top: .025rem solid $color-border;
+    background: #ffffff;
+    padding: 0 .75rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    .game-info-des {
+      display: flex;
+      justify-content: flex-start;
+      .game-info-img {
+        margin: .4rem 0;
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: $border-radius;
+        img {
+          width: 1.4rem;
+          height: 1.4rem;
+          border-radius: $border-radius;
+          display: block;
+        }
+      }
+      .game-info-body {
+        margin: .4rem 0 .4rem .5rem;
+        height: 1.4rem;
+        &.official {
+          line-height: 1.4rem;
+        }
+        p {
+          font-size: .6rem;
+          color: $color-text-deep;
+        }
+        .game-star {
+          margin-top: .25rem;
+        }
+      }
+    }
+    .game-info-oper {
+      height: .8rem;
+      margin: .7rem 0;
+      line-height: .8rem;
+      p {
+        font-size: .6rem;
+        color: $color-text-deep;
+        i {
+          font-size: .8rem;
+          margin-right: .375rem;
+          &.active {
+            color: $color-red;
+            @include gradient($color-red, $color-yellow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  } // 资讯内容
+  .news-body {
+    overflow: hidden;
+    background: #fff;
+    .news-title {
+      padding: 0 .75rem;
+      box-sizing: border-box;
+      margin: .75rem 0;
+      >h1 {
+        font-size: .7rem;
+        color: $color-text-deep;
+        font-weight: normal;
+      }
+      .news-extra {
+        display: flex;
+        justify-content: space-between;
+        margin-top: .75rem;
+        font-size: .6rem;
+        color: $color-text-light;
+      }
+    }
+    .news-content {
+      padding: 0 .75rem;
+      margin: .75rem 0;
+      box-sizing: border-box;
+      p {
+        font-size: .35rem;
+        line-height: 1.5;
+      }
+      ul, ol {
+        padding-left: .75rem;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      table {
+        border: .025rem solid $color-border;
+      }
+      table td {
+        border: .025rem solid $color-border;
+      }
+    }
+    .news-recommend {
+      height: 4.7rem;
+      margin: 0 .75rem;
+      border-top: .025rem solid $color-border;
+      padding: .75rem 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      .game-recommend-img {
+        margin-right: .75rem;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: $border-radius;
+        img {
+          display: block;
+          width: 3.2rem;
+          height: 3.2rem;
+          border-radius: $border-radius;
+        }
+      }
+      .game-recommend-info {
+        width: 100%;
+        .name {
+          font-size: .7rem;
+          color: $color-text-deep;
+        }
+        .des {
+          font-size: .6rem;
+          color: $color-text-deep;
+          margin-top: .5rem;
+        }
+        .type {
+          font-size: .6rem;
+          color: $color-text-light;
+          margin-top: .7rem;
+        }
+      }
+      .game-recommend-btns {
+        margin-top: .8rem;
+      }
+    }
+  } // 资讯回复
+  .news-reply {
+    background: #ffffff;
+    margin-top: .25rem;
+    .reply-title {
+      border-bottom: 1px solid $color-border;
+      padding: 0 .75rem;
+      box-sizing: border-box;
+      font-size: .7rem;
+      color: $color-text-deep;
+      line-height: 1.65rem;
+      height: 1.65rem;
+    }
+  }
+}

@@ -1,0 +1,255 @@
+@import './../../common/variable';
+
+
+.video-box {
+  position: relative;
+  z-index: 599;
+}
+
+.video-player {
+  &.border {
+    .video-js {
+      border-radius: .25rem .25rem 0 0;
+      video {
+        border-radius: .25rem .25rem 0 0;
+      }
+    }
+  }
+  .video-js {
+    background: $color-text-light;
+    overflow: hidden;
+    video {
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    .vjs-big-play-button {
+      border: none;
+      background: none;
+      width: 2.7rem;
+      height: 2.7rem;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      .vjs-icon-placeholder::before {
+        font-family: 'iconfont';
+        content: '\e629';
+        font-size: 2.7rem;
+      }
+    }
+  }
+}
+
+.android-video{
+  overflow: hidden;
+  width: 100%;
+  .android-video-inner{
+    height: 9.25rem;
+    img {
+      display: block;
+      height: 9.25rem;
+    }
+  }
+}
+
+.video-playing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  left: 0;
+  top: 0;
+  z-index: 5;
+  border-radius: .25rem .25rem 0 0;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.7rem;
+    color: $color-white;
+  }
+}
+.playing-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.video-pause {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  font-size: 1.5rem;
+  color: $color-white;
+}
+
+.android-video-box{
+  position: fixed;
+  z-index: 8999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .8);
+  video {
+    width: 100%;
+    position: absolute;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  i {
+    position: absolute;
+    font-size: 1rem;
+    color: $color-white;
+    right: .75rem;
+    top: .75rem;
+  }
+}
+
+// 首页卡片（视频/图片）
+.game-card {
+  margin: .5rem .75rem;
+  transform: translate3d(0, 0, 0);
+  background: $color-white;
+  border-radius: .25rem;
+  box-shadow: .05rem .05rem .1rem 0 $color-shadow;
+  .game-card-video {
+    min-height: 1rem;
+    width: 100%;
+    height: 9.25rem;
+    border-radius: .25rem .25rem 0 0;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: .25rem .25rem 0 0;
+    }
+    .video-player .video-js {
+      width: 100%;
+      max-height: 9.25rem;
+      border-radius: .25rem .25rem 0 0;
+      video {
+        border-radius: .25rem .25rem 0 0 !important;
+      }
+    }
+  }
+  .game-card-img {
+    width: 100%;
+    height: 9.25rem;
+    border-radius: .25rem .25rem 0 0;
+    img {
+      border-radius: .25rem .25rem 0 0;
+      display: block;
+      width: 100%;
+      height: 9.25rem;
+    }
+  }
+  .game-card-des {
+    display: flex;
+    justify-content: space-between;
+    .game-card-img {
+      margin: 0 .75rem;
+      position: relative;
+      z-index: 800;
+      border-radius: $border-radius;
+      width: 2.75rem;
+      height: 2.75rem;
+      img {
+        width: 2.75rem;
+        height: 2.75rem;
+        display: block;
+        border-radius: $border-radius;
+      }
+    }
+    .game-card-info {
+      height: 2rem;
+      margin: .5rem 0;
+      // width: 8.5rem;
+      flex: 1;
+      overflow: hidden;
+      .title {
+        color: $color-text-deep;
+        font-size: .7rem;
+        line-height: 1rem;
+      }
+      .des {
+        color: $color-text-mid;
+        font-size: .6rem;
+        line-height: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    &.video-des {
+      height: 3rem;
+      .game-card-img {
+        transform: translateY(-.45rem);
+      }
+      .game-card-oper {
+        box-sizing: border-box;
+        padding: .85rem .75rem;
+      }
+    }
+    &.img-des {
+      height: 2.5rem;
+      .game-card-img {
+        transform: translateY(-1.1rem);
+      }
+      .game-card-oper {
+        box-sizing: border-box;
+        padding: .5rem .75rem;
+      }
+      .game-card-info {
+        height: 1.5rem;
+        .des {
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// .video-player {
+// }
+
+// .android-video-inner{
+//     position: relative;
+//     img {
+//         width: 100%;
+//         height: 9.25rem;
+//         border-radius: .25rem .25rem 0 0;
+//     }
+//     .video-playing{
+//         position: absolute;
+//         left: 50%;
+//         top: 50%;
+//         transform: translate3d(-50%, -50%, 0);
+//         z-index: 50;
+//         font-size: 2.7rem;
+//         color: $color-white;
+//     }
+// }
+
+// .ios-video {
+//     position: relative;
+//     video {
+//         width: 100%;
+//         height: 9.25rem;
+//         border-radius: .25rem .25rem 0 0;
+//     }
+//     i {
+//         position: absolute;
+//         left: 50%;
+//         top: 50%;
+//         transform: translate3d(-50%, -50%, 0);
+//         z-index: 50;
+//         font-size: 2.7rem;
+//         color: $color-white;
+//     }
+// }
