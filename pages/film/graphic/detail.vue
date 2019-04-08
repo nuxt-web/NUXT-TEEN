@@ -2,6 +2,7 @@
     <div class="graphic-detail" ref="detail">
         <!-- <graphic-header></graphic-header> -->
         <!-- <graphic-header></graphic-header> -->
+        <graphic-back></graphic-back>
         <img class="image" src="../../../static/images/graphic/1.jpg" alt="">
         <img class="image" src="../../../static/images/graphic/2.jpg" alt="">
         <img class="image" src="../../../static/images/graphic/3.jpg" alt="">
@@ -12,7 +13,7 @@
         <!-- <graphic-progress></graphic-progress> -->
         <div class="progress">
             <el-slider
-                v-model="value10"
+                v-model="progressValue"
                 >
             </el-slider>
         </div>
@@ -20,29 +21,30 @@
     </div>
 </template>
 <script>
+import GraphicBack from '../../../components/film/graphic/simpleBack'
 import GraphicHeader from '../../../components/film/graphic/header'
 import GraphicProgress from '../../../components/film/graphic/progress'
 export default {
     components: {
+        GraphicBack,
         GraphicHeader,
         GraphicProgress
     },
     data () {
         return {
-            value10: 10
+            progressValue: 0
         }
     },
     methods: {
-
     },
     watch: {
-        value10 (val) {
-            let scHeight = this.$refs.detail.scrollHeight
-            let clHeight = this.$refs.detail.clientHeight
-            // document.body.scrollTop = val * 100
-            console.log(this.$refs.detail.scrollTop, val)
-            console.log(document.body, 'hhh')
-            // this.$refs.detail.scrollHeight = 
+        progressValue (val) {
+            let scHeight = document.documentElement.scrollHeight
+            let clHeight = document.documentElement.clientHeight
+            // this.$refs.detail.scrollTop = val/100 * scHeight
+            // console.log(this.$refs.detail.scrollTop, 'hhhh')
+            document.documentElement.scrollTop = val/100 * scHeight
+            console.log(document.documentElement.scrollTop, 'hhhh')
         }
     }
 }
