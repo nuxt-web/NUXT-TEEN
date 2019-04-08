@@ -7,9 +7,9 @@
     <!-- 页面头部 结束 -->
 
     <div class="page-main">
-        <topic :titleName="'热门话题'"></topic>
+        <topic :titleName="'热门'" :pageName="'activity-graphic'"></topic>
         <item></item>
-        <topic :titleName="'热门图解'"></topic>
+        <topic :titleName="'热门图解'" :pageName="'activity-graphic'"></topic>
         <graphic></graphic>
     </div>
     <teen-footer></teen-footer>
@@ -17,12 +17,12 @@
 </div> 
 </template>
 <script>
-import TeenHeader from '../../components/global/header'
-import Topic from '../../components/topic/title.vue'
-import Item from '../../components/topic/item.vue'
-import List from '../../components/topic/list.vue'
-import Graphic from '../../components/film/graphic/item'
-import TeenFooter from "../../components/global/footer"
+import TeenHeader from '../../../components/global/header'
+import Topic from '../../../components/topic/title.vue'
+import Item from '../../../components/topic/item.vue'
+import List from '../../../components/topic/list.vue'
+import Graphic from '../../../components/film/graphic/item'
+import TeenFooter from "../../../components/global/footer"
 export default {
     components: {
         TeenHeader,

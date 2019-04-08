@@ -35,6 +35,7 @@ export default {
     props: ['postType'],
     methods: {
         goPage () {
+            console.log('hhh')
             this.$router.push({
                 name: 'topic-replyDetail'
             })

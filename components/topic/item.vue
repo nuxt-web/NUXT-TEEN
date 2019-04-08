@@ -1,6 +1,7 @@
 <template>
     <div class="items">
         <div class="item" v-for="i in 6" @click="goPage">
+            <img class="img" src="../../static/images/graphic.jpeg" alt="">
             <div class="mask">
                 <p class="name">肖申克的救赎</p>
                 <p class="tip">5256人参与</p>

@@ -1,18 +1,20 @@
 <template>
 <div>
     <!-- 页面头部 -->
-    <teen-header redBg="true">
+    <!-- <teen-header redBg="true">
         <div class="title" slot="title">活动</div>
-    </teen-header>
+    </teen-header> -->
     <!-- 页面头部 结束 -->
 
-    <div class="page-main">
-        <topic :titleName="'热门话题'"></topic>
+    <!-- <div class="page-main">
+        <topic :titleName="'热门话题'" :pageName="'activity-topic'"></topic>
         <item></item>
-        <topic :titleName="'热门图解'"></topic>
+        <topic :titleName="'热门图解'" :page-name="'activity-graphic'"></topic>
         <graphic></graphic>
-    </div>
-    <teen-footer></teen-footer>
+    </div> -->
+
+    <!-- <activity-tab></activity-tab>
+    <teen-footer></teen-footer> -->
     <!-- <list></list> -->
 </div> 
 </template>
@@ -23,6 +25,7 @@ import Item from '../../components/topic/item.vue'
 import List from '../../components/topic/list.vue'
 import Graphic from '../../components/film/graphic/item'
 import TeenFooter from "../../components/global/footer"
+import ActivityTab from '../../components/activity/activityTab'
 export default {
     components: {
         TeenHeader,
@@ -30,7 +33,8 @@ export default {
         Item,
         List,
         Graphic,
-        TeenFooter
+        TeenFooter,
+        ActivityTab
     }
 }
 </script>

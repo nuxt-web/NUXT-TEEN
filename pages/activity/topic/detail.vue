@@ -7,9 +7,9 @@
 </div> 
 </template>
 <script>
-import topicContent from './../../components/topic/content.vue'
-import topicPost from './../../components/topic/post.vue'
-import TeenScroller from './../../components/global/teenScroller'
+import topicContent from '../../../components/topic/content.vue'
+import topicPost from '../../../components/topic/post.vue'
+import TeenScroller from '../../../components/global/teenScroller'
 export default {
     components: {
         topicContent,
