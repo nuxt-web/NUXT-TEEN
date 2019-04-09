@@ -8,11 +8,12 @@
     </div>
 </template>
 <script>
-// import FilmHeader from '../../../components/film/header'
-import GraphicItem from '../../../components/film/graphic/item'
+import GraphicItem from '../../components/film/graphic/item'
+import TeenScroller from '../../components/global/scroller'
 export default {
     components: {
-        GraphicItem
+        GraphicItem,
+        TeenScroller
     }
 }
 </script>

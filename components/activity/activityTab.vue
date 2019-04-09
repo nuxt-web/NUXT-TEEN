@@ -1,7 +1,7 @@
 <template>
   <div class="game-detail-tab game-detail-tab-top" ref="detailTab" @click="changeTab">
-    <div class="tab-item active" v-if="currentTab == 0" data-index="0" data-name="activity-topic">话题</div>
-    <div class="tab-item" v-if="currentTab != 0" data-index="0" data-name="activity-topic">话题</div>
+    <div class="tab-item active" v-if="currentTab == 0" data-index="0" data-name="activity">话题</div>
+    <div class="tab-item" v-if="currentTab != 0" data-index="0" data-name="activity">话题</div>
 
     <div class="tab-item active" v-if="currentTab == 1" data-index="1" data-name="activity-graphic">图解电影</div>
     <div class="tab-item" v-if="currentTab != 1" data-index="1" data-name="activity-graphic">图解电影</div>
@@ -57,11 +57,8 @@
           case '':
             currentTab = 0
             break
-          case 'coming':
+          case 'graphic':
             currentTab = 1
-            break
-          case 'rank':
-            currentTab = 2
             break
         }
         this.currentTab = currentTab

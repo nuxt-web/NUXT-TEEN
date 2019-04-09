@@ -19,7 +19,7 @@
                     <i class="icon like circle"></i>
                     <span class="text">喜欢 214022</span>
                 </div>
-                <p class="read-btn">
+                <p class="read-btn" @click="goPage">
                     开始阅读
                 </p>
             </div>
@@ -48,6 +48,12 @@ export default {
     methods: {
         showIntro () {
             this.isLimit = !this.isLimit
+        },
+        goPage () {
+            console.log('page')
+            this.$router.push({
+                name: 'graphic-detail'
+            })
         }
     },
     computed: {

@@ -10,7 +10,7 @@
                     <div class="full-progress"></div>
                 </div>
             </div>
-            <p class="button">继续浏览</p>
+            <!-- <p class="button">继续浏览</p> -->
         </div>
     </div>
 </template>

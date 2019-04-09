@@ -12,36 +12,40 @@
         <topic :titleName="'热门图解'" :page-name="'activity-graphic'"></topic>
         <graphic></graphic>
     </div> -->
-
     <!-- <activity-tab></activity-tab>
     <teen-footer></teen-footer> -->
     <!-- <list></list> -->
+    <div class="page-main">
+        <!-- <teen-scroller> -->
+            <item></item>
+        <!-- </teen-scroller> -->
+    </div>
 </div> 
 </template>
 <script>
-import TeenHeader from '../../components/global/header'
-import Topic from '../../components/topic/title.vue'
 import Item from '../../components/topic/item.vue'
-import List from '../../components/topic/list.vue'
-import Graphic from '../../components/film/graphic/item'
-import TeenFooter from "../../components/global/footer"
-import ActivityTab from '../../components/activity/activityTab'
+import TeenScroller from '../../components/global/scroller'
 export default {
     components: {
-        TeenHeader,
-        Topic,
         Item,
-        List,
-        Graphic,
-        TeenFooter,
-        ActivityTab
+        TeenScroller
+    },
+    methods: {
+        pushTopic (done) {
+            console.log('push')
+            done()
+        },
+        pullTopic (done) {
+            console.log('pull')
+            done(true)
+        }
     }
 }
 </script>
 <style src="./" lang="./../../assets/css/topic/index.scss" scoped></style>
 <style lang="scss" scoped>
 .page-main {
-    padding: 2.4rem 0 4rem;
+    padding: 4.8rem 0 4rem;
 }
 </style>
 

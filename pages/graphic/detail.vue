@@ -11,10 +11,10 @@
     </div>
 </template>
 <script>
-import GraphicBack from '../../../components/film/graphic/simpleBack'
-import GraphicHeader from '../../../components/film/graphic/header'
-import GraphicProgress from '../../../components/film/graphic/progress'
-import GraphicDetail from '../../../components/film/graphic/detail'
+import GraphicBack from '../../components/film/graphic/simpleBack'
+import GraphicHeader from '../../components/film/graphic/header'
+import GraphicProgress from '../../components/film/graphic/progress'
+import GraphicDetail from '../../components/film/graphic/detail'
 export default {
     components: {
         GraphicBack,
@@ -61,7 +61,7 @@ export default {
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 // body {
 //     height: auto;
 // }

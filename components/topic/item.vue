@@ -11,6 +11,11 @@
 </template>
 <script>
 export default {
+    props: {
+        itemList: {
+            default: 3
+        }
+    },
     methods: {
         goPage () {
             this.$router.push({

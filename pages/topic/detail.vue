@@ -1,20 +1,23 @@
 <template>
 <div>
-    <teen-scroller :refresh="pushNews" :infinite="pullReply">
+    <!-- <teen-scroller :refresh="pushNews" :infinite="pullReply"> -->
         <topic-content v-if="isRouterAlive"></topic-content>
         <topic-post v-for="i in postNum" :postType = "1"></topic-post>
-    </teen-scroller>
+        <topic-button @click.native="goPage"></topic-button>
+    <!-- </teen-scroller> -->
 </div> 
 </template>
 <script>
 import topicContent from './../../components/topic/content.vue'
 import topicPost from './../../components/topic/post.vue'
 import TeenScroller from './../../components/global/teenScroller'
+import topicButton from './../../components/topic/button'
 export default {
     components: {
         topicContent,
         topicPost,
-        TeenScroller
+        TeenScroller,
+        topicButton
     },
     data () {
         return {
@@ -35,7 +38,10 @@ export default {
         reload () {
             this.isRouterAlive = false
             this.$nextTick(() => (this.isRouterAlive = true))
-        }   
+        },
+        goPage () {
+            console.log('hhhh')
+        } 
     }
 }
 </script>

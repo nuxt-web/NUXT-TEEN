@@ -21,7 +21,7 @@ export default {
     methods: {
         goPage () {
             this.$router.push({
-                name: 'activity-graphic-detail'
+                name: 'graphic-intro'
             })
         }
     }

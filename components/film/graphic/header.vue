@@ -1,12 +1,16 @@
 <template>
     <div class="header">
-        <i class="icon back"></i>
+        <i class="icon back" @click="goBack"></i>
         <p class="text">流浪地球</p>
     </div>
 </template>
 <script>
 export default {
-    
+    methods: {
+        goBack () {
+            this.$router.back()
+        }
+    }
 }
 </script>
 <style lang="scss">

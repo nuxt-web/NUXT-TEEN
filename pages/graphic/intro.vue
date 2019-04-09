@@ -9,11 +9,11 @@
     </div>
 </template>
 <script>
-import GraphicHeader from '../../../components/film/graphic/header'
-import GraphicInfo from '../../../components/film/graphic/info'
-import GraphicReply from '../../../components/film/graphic/replyItem'
-import ReplyFooter from '../../../components/film/graphic/replyFooter'
-import RecordView from '../../../components/film/graphic/recordView'
+import GraphicHeader from '../../components/film/graphic/header'
+import GraphicInfo from '../../components/film/graphic/info'
+import GraphicReply from '../../components/film/graphic/replyItem'
+import ReplyFooter from '../../components/film/graphic/replyFooter'
+import RecordView from '../../components/film/graphic/recordView'
 export default {
     components: {
         GraphicHeader,
