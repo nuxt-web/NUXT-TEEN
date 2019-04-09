@@ -8,6 +8,7 @@
                 <div class="vertical"></div>
             </div>
         </div>
+        <p class="topic-button" @click="goPage">#添加话题</p>
     </div>
 </template>
 <script>
@@ -20,18 +21,24 @@ export default {
     methods: {
         focusArea () {
             this.eidtContent = ''
+        },
+        goPage () {
+            this.$router.push({
+                name: 'topic-add'
+            })
         }
     },
     watch: {
     }
 }
 </script>
-<style>
-body {
+<style lang="scss" scoped>
+@import '../../assets/css/common/variable';
+.edit-area {
+    width: 100%;
+    height: 100%;
     background: #ffffff;
 }
-</style>
-<style lang="scss" scoped>
 .text-area {
     width: 100%;
     min-height: 10rem;
@@ -75,5 +82,16 @@ body {
         top: 10%;
         left: 50%;
     }
+}
+.topic-button {
+    margin: .5rem .2rem;
+    display: inline-block;
+    padding: .2rem .3rem;
+    font-size: .7rem;
+    // width: 1.5rem;
+    // height: 1rem;
+    border: 1px solid $color-primary;
+    border-radius: .5rem;
+    color: $color-primary;
 }
 </style>
