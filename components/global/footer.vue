@@ -17,7 +17,8 @@
           { label: '电影', type: 'movie', active: false },
           // { label: '放映室', type: 'scoreShop', active: false},
           { label: '放映室', type: 'cinema', active: false },
-          { label: '活动', type: 'news', active: false },
+          // { label: '活动', type: 'news', active: false },
+          { label: '活动', type: 'activity', active: false },
           { label: '我的', type: 'mine', active: false }]
       }
     },

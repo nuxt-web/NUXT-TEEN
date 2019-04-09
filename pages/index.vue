@@ -376,10 +376,11 @@
     transform: translate3d(0, 0, 0);
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
-  &::after {
-     content: '';
-     height: 2.4rem;
-     width: 100%;
-   }
+    &::after {
+      content: '';
+      height: 2.4rem;
+      width: 100%;
+    }
   }
 </style>
+
