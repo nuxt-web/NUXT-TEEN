@@ -1,0 +1,124 @@
+@import './../../common/variable';
+
+.user-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./../../../../static/images/bg.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  .user-logo {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: 4rem auto 0;
+    .logo {
+      background-size: contain;
+      width: 7.5rem;
+      height: 3.65rem;
+    }
+  }
+  .user-form {
+    margin: 2.5rem 1.5rem;
+    .user-form-item {
+      position: relative;
+      height: 2.2rem;
+      &:not(:last-child) {
+        margin-bottom: .75rem;
+      }
+      &:last-child {
+        margin-bottom: .5rem;
+      }
+      .form-icon {
+        position: absolute;
+        top: .75rem;
+        left: .75rem;
+        color: $color-white;
+        width: .75rem;
+        height: .75rem;
+        font-size: .75rem;
+        line-height: .75rem;
+      }
+      .form-verify {
+        position: absolute;
+        width: 2.5rem;
+        height: 1rem;
+        top: .625rem;
+        right: .75rem;
+      }
+      .form-input {
+        width: 100%;
+        height: 2.2rem;
+        border: .05rem solid $color-input;
+        outline: none;
+        background: rgba(255, 255, 255, .28);
+        box-sizing: border-box;
+        padding: 0 .75rem 0 2.3rem;
+        border-radius: .25rem;
+        font-size: .65rem;
+        color: $color-text-deep;
+        &::-webkit-input-placeholder {
+          color: $color-input;
+        }
+        &:focus {
+          border-color: $color-yellow;
+        }
+        &+span {
+          color: $color-input;
+        }
+        &:focus+span {
+          color: $color-yellow;
+        }
+      }
+      .form-get {
+        position: absolute;
+        height: 2.2rem;
+        display: block;
+        line-height: 2.2rem;
+        font-size: .55rem;
+        color: $color-text-light;
+        right: .75rem;
+        top: 0;
+        &.active {
+          color: $color-disabled;
+        }
+      }
+    }
+    .user-form-oper {
+      display: flex;
+      justify-content: space-between;
+      font-size: .6rem;
+      color: $color-text-btn;
+    }
+  }
+  .user-oper {
+
+    height: 2rem;
+    text-align: center;
+    font-size: .75rem;
+    color: $color-white;
+    padding: 0 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    .btn {
+      line-height: 2rem;
+      border-radius: 1rem;
+      @include gradient(#FFDE02, yellow);
+      width: 100%;
+      &.disabled {
+        background: $color-disabled;
+      }
+    }
+    .protocol {
+      font-size: .5rem;
+      color: $color-text-light;
+      text-align: left;
+      margin-top: .5rem;
+      span {
+        text-decoration: underline;
+        color: $color-text-btn;
+      }
+    }
+  }
+}

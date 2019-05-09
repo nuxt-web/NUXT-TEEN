@@ -52,6 +52,10 @@ module.exports = {
     {
       src: '~/plugins/vue-video-player.js',
       ssr: false
+    },
+    {
+      src: '~/plugins/axios.js',
+      ssr: true
     }
   ],
 
