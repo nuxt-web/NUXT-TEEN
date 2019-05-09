@@ -1,6 +1,6 @@
 <template>
 <div>
-    <back-header></back-header>
+    <back-header :backTitle="'四条回复'"></back-header>
     <topic-post :postType = "'2'"></topic-post>
     <reply-filter></reply-filter>
     <reply-item v-for="i in 3" @showReply="showReply"></reply-item>
@@ -45,4 +45,12 @@ export default {
     }
 }
 </script>
-<style src="./../../assets/css/views/topic/replyDetail.scss" lang="scss"></style>
+<style lang="scss" scoped>
+// .post-holder {
+//     padding: 0 !important;
+// }
+// .post {
+//         margin: 0 !important;
+//         border-radius: 0 !important;
+//     }
+</style>

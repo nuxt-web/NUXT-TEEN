@@ -4,12 +4,14 @@
             <i class="icon back"></i>
         </p>
         <p class="title">
-            4条回复
+            <!-- 4条回复 -->
+            {{backTitle}}
         </p>
     </div>
 </template>
 <script>
 export default {
+    props: ['backTitle'],
     methods: {
         goBack () {
             this.$router.back()

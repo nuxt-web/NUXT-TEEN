@@ -31,13 +31,23 @@
         }
     }
     .reply-content {
-        padding: .5rem .5rem 1.75rem 2.25rem;
+        padding: .5rem .5rem 1rem 2.25rem;
         font-size: .75rem;
         color: $color-text-primary;
     }
-    .reply-time {
-        font-size: .6rem;
-        padding-left: 2.25rem;
-        color: $color-text-primary;
-    }
+    .footer {
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .reply-time {
+            font-size: .6rem;
+            padding-left: 2.25rem;
+            color: $color-text-primary;
+        }
+        .icon {
+            font-size: 1rem;
+        }
+    }  
 }

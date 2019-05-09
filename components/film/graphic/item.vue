@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="item" v-for="i in 6">
+        <div class="item" v-for="i in 6" @click="goPage">
             <img class="img" src="../../../static/images/graphic.jpeg" alt="">
             <div class="mask">
                 <div class="info">
@@ -18,10 +18,16 @@
 </template>
 <script>
 export default {
-    
+    methods: {
+        goPage () {
+            this.$router.push({
+                name: 'graphic-intro'
+            })
+        }
+    }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .item {
         width: 90%;
         height: 9rem;
