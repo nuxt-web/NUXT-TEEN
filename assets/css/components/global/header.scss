@@ -1,5 +1,5 @@
 @import './../../common/variable';
-.rastar-header {
+.teen-header {
     height: 2.4rem;
     overflow: hidden;
     position: fixed;
@@ -13,34 +13,34 @@
         width: 100%;
     }
     // 透明背景
-    &.rastar-header-transparent{
+    &.teen-header-transparent{
         background: transparent;
-        .rastar-title {
-           color: white;
+        .teen-title {
+           color: black;
         }
-        .rastar-filter {
+        .teen-filter {
             color: white;
         }
-        .rastar-back {
+        .teen-back {
             color: white;
         }
     }
     // 填充背景
-    &.rastar-header-fill{
+    &.teen-header-fill{
         //@include gradient($color-primary-deep, $color-primary-light);
-        @include gradient(#FFDE02, yellow);
-        .rastar-title {
+        @include gradient(#FFDE02, #FFFF00);
+        .teen-title {
            color:black;
         }
-        .rastar-filter {
+        .teen-filter {
             color:black;
         }
-        .rastar-back {
+        .teen-back {
             color: black;
         }
     }
     // 头部标题
-    .rastar-title {
+    .teen-title {
         color: black;
         max-width: 80%;
         margin: 0 auto;
@@ -73,7 +73,7 @@
         }
     }
     // 右侧按钮
-    .rastar-filter {
+    .teen-filter {
         position: absolute;
         right: .725rem;
         top: 0;
@@ -94,7 +94,7 @@
         }
     }
     // 返回按钮
-    .rastar-back {
+    .teen-back {
         position: absolute;
         line-height: 2.4rem;
         left: .725rem;

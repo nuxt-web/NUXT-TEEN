@@ -5,6 +5,7 @@
       <div class="logo" slot="title">
         <img src="../../static/images/logo-mini-3.png">
       </div>
+      {{username}}
     </teen-header>
 
     <section class="page-wrapper">
@@ -48,6 +49,7 @@
       return {
         // 红点
         haveNotice: false,
+        username: '',
         // 界面控制
         showEl: false,
         scrollTop: 0,
@@ -361,6 +363,23 @@
       infinite: function () {
         console.log(7777)
       }
+    },
+    created: function () {
+      console.log('sssawddawdasdwasdwa')
+      let url = 'www.chaos.com/login.php' 
+      let url2 = 'www.chaos.com/login.php?username=chaos&password=5555555'
+      this.$ajax.get(url,{
+        params:{
+          username: 'chaos',
+          password: '55555',
+        }
+      }).then((res)=>{
+        console.log('username', this.username)
+        this.username = res.data.data.username
+        console.log(res.data.data)
+      }).catch((error)=>{
+        console.log(error)
+      })
     }
   }
 </script>
