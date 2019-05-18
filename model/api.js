@@ -1,4 +1,4 @@
-let base = 'http://teen.com/nuxt/entry'
+let base = 'http://teen.com/teen/entry'
 
 export default{
   getIndex: base + '/index.php',

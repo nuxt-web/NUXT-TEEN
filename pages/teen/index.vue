@@ -17,9 +17,8 @@
         <movie-list :movieList="movieList"></movie-list>
 
         <!--电影swiper-->
-        <movie-swiper :activities="activity" title="最新电影"></movie-swiper>
-        <movie-swiper :activities="activity" title="热门番剧"></movie-swiper>
-        <movie-swiper :activities="activity" title="漫威宇宙"></movie-swiper>
+        <movie-swiper v-for="item in activity" :activities="item.activity_item" :title="item.activity_name"></movie-swiper>
+
 
       </teen-scroller>
     </section>
@@ -30,10 +29,11 @@
 <script>
   import TeenHeader from './../../components/global/header'
   import TeenScroller from "../../components/global/teenScroller";
+  import TeenFooter from "../../components/global/footer"
   import SwiperBanner from "../../components/global/swiperBanner";
   import MovieList from "../../components/movie/MovieList"
   import MovieSwiper from "../../components/movie/MovieSwiper"
-  import TeenFooter from "../../components/global/footer"
+  import api from "../../model/api.js"
 
   export default {
     name: 'Game',
@@ -63,323 +63,58 @@
           limit: 5
         },
         // 首页信息数据
-        banner: [
-          {
-            img_url: require('../../static/images/BLUE2.jpg')
-          },
-          {
-            img_url: require('../../static/images/CM.jpg')
-          },
-          {
-            img_url: require('../../static/images/MYHERO.jpg')
-          },
-          {
-            img_url: require('../../static/images/SPIDER.jpg')
-          }
-        ],
-        movieList: [
-          {
-            url: require('../../static/images/BLUE1.jpg'),
-            title: '比悲伤更悲伤的故事',
-            time: '2019-3-14',
-            slogan: '唯一观影建议：请带着纸巾',
-            tags: [
-              '6666', '感动', '哭了三分之一', '爱', '6666', '6666'
-            ]
-          },
-          {
-            url: require('../../static/images/BLUE1.jpg'),
-            title: '比悲伤更悲伤的故事',
-            time: '2019-3-14',
-            slogan: '唯一观影建议：请带着纸巾',
-            tags: [
-              '6666', '感动', '哭了三分之一', '爱', '6666', '6666'
-            ]
-          }
-        ],
+        banner: [],
+        movieList: [],
         activity: [
           {
-            android_dst_info: {
-              app_id: 100002,
-              package_name: 'ceshi'
-            },
-            android_dst_type: 1,
-            app_id: 100002,
-            compatible_os: '1|2',
-            img_url: require('../../static/images/BLUE1.jpg'),
-            news_id: 0,
-            web_dst_url: 'http://m.rastargame.com/dist/news/4110'
+            activity_name: '热门美剧',
+            activity_item: [],
           },
           {
-            android_dst_info: {
-              app_id: 100002,
-              package_name: 'ceshi'
-            },
-            android_dst_type: 1,
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 39,
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../../static/images/COMEDY.jpg'),
-            news_id: 0,
-            web_dst_url: 'http://m.rastargame.com/dist/news/4110'
+            activity_name: '最新日剧',
+            activity_item: [],
           },
           {
-            android_dst_info: {
-              app_id: 100002,
-              package_name: 'ceshi'
-            },
-            android_dst_type: 1,
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 39,
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../../static/images/DES.jpg'),
-            news_id: 0,
-            web_dst_url: 'http://m.rastargame.com/dist/news/4110'
-          },
-          {
-            android_dst_info: {
-              app_id: 100002,
-              package_name: 'ceshi'
-            },
-            android_dst_type: 1,
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 39,
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../../static/images/KISS.jpg'),
-            news_id: 0,
-            web_dst_url: 'http://m.rastargame.com/dist/news/4110'
-          },
-          {
-            android_dst_info: {
-              app_id: 100002,
-              package_name: 'ceshi'
-            },
-            android_dst_type: 1,
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 39,
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../../static/images/LIFTRES.jpg'),
-            news_id: 0,
-            web_dst_url: 'http://m.rastargame.com/dist/news/4110'
-          },
-          {
-            android_dst_info: {
-              app_id: 100002,
-              package_name: 'ceshi'
-            },
-            android_dst_type: 1,
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 39,
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/activity/n1/2018/08/30/1535617946750.jpg',
-            img_url: require('../../static/images/VEMON.jpg'),
-            news_id: 0,
-            web_dst_url: 'http://m.rastargame.com/dist/news/4110'
+            activity_name: '国产热剧',
+            activity_item: [],
           }
         ],
-        news: [
-          {
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 4138,
-            // img_url: require('../static/images/GOODMOVIE.jpg'),
-            title: '从《一出好戏》谈反乌托邦',
-            web_dst_url: ''
-          },
-          {
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 4138,
-            // img_url: require('../../assets/img/temp/GOODMOVIE.jpg'),
-            title: '123123',
-            web_dst_url: ''
-          },
-          {
-            app_id: 100002,
-            compatible_os: '1|2',
-            id: 4138,
-            // img_url: require('../../assets/img/temp/GOODMOVIE.jpg'),
-            title: '123123',
-            web_dst_url: ''
-          }
-        ],
-        // 游戏列表数据
-        // recentH5List: [],
-        topicListL: [
-          {
-            app_bind_info: {
-              app_id: 100198,
-              app_name: '苍之纪元',
-              icon_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/06/13/1528853889983.png'
-            },
-            id: 2,
-            img: 'https://img02.rastargame.com/gameCenter/img/topic/img/n1/2018/07/05/1530760623531.jpg',
-            show_type: 0
-          }
-        ],
-        // gamesList: [],
-        gameFirstList: [
-          {
-            android_download_url: 'http://65.xuqiu.com/requirements',
-            android_game_version: '234234',
-            android_package_size: '50',
-            android_sub_url: '',
-            app_id: 11111,
-            category: '休闲放置',
-            cch_id: 222,
-            compatible_os: '1|2',
-            h5_dst_url: '',
-            icon_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png',
-            icon_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png?imageView2/1/w/110/h/110',
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png',
-            img_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png?imageView2/1/w/660/h/370',
-            ios_app_id_main: 0,
-            ios_download_url: '',
-            ios_sub_url: '',
-            name: 'test',
-            package_name: '1',
-            slogan: '1',
-            top: false,
-            type: 3,
-            video: {
-              video_img: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/11/19/1542610853644.jpg',
-              video_url: 'http://mvvideo10.meitudata.com/5bf23f3b96bf41115.mp4?k=aa9293f8b9d34111a7466bccffb6f503&t=5bf65050'
-            }
-          },
-          {
-            android_download_url: 'http://65.xuqiu.com/requirements',
-            android_game_version: '234234',
-            android_package_size: '50',
-            android_sub_url: '',
-            app_id: 11111,
-            category: '休闲放置',
-            cch_id: 222,
-            compatible_os: '1|2',
-            h5_dst_url: '',
-            icon_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png',
-            icon_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png?imageView2/1/w/110/h/110',
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png',
-            img_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png?imageView2/1/w/660/h/370',
-            ios_app_id_main: 0,
-            ios_download_url: '',
-            ios_sub_url: '',
-            name: 'test',
-            package_name: '1',
-            slogan: '1',
-            top: true,
-            type: 3,
-            video: {
-              video_img: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/11/19/1542610853644.jpg',
-              video_url: 'http://mvvideo10.meitudata.com/5bf23f3b96bf41115.mp4?k=aa9293f8b9d34111a7466bccffb6f503&t=5bf65050'
-            }
-          }
-        ],
-        gameSecondList: [
-          {
-            android_download_url: 'http://65.xuqiu.com/requirements',
-            android_game_version: '234234',
-            android_package_size: '50',
-            android_sub_url: '',
-            app_id: 11111,
-            category: '休闲放置',
-            cch_id: 222,
-            compatible_os: '1|2',
-            h5_dst_url: '',
-            icon_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png',
-            icon_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png?imageView2/1/w/110/h/110',
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png',
-            img_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png?imageView2/1/w/660/h/370',
-            ios_app_id_main: 0,
-            ios_download_url: '',
-            ios_sub_url: '',
-            name: 'test',
-            package_name: '1',
-            slogan: '1',
-            top: true,
-            type: 0
-          }
-        ],
-        gameThirdList: [
-          {
-            android_download_url: 'http://65.xuqiu.com/requirements',
-            android_game_version: '234234',
-            android_package_size: '50',
-            android_sub_url: '',
-            app_id: 11111,
-            category: '休闲放置',
-            cch_id: 222,
-            compatible_os: '1|2',
-            h5_dst_url: '',
-            icon_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png',
-            icon_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png?imageView2/1/w/110/h/110',
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png',
-            img_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png?imageView2/1/w/660/h/370',
-            ios_app_id_main: 0,
-            ios_download_url: '',
-            ios_sub_url: '',
-            name: 'test',
-            package_name: '1',
-            slogan: '1',
-            top: true,
-            type: 0
-          }
-        ],
-        gameRestList: [
-          {
-            android_download_url: 'http://65.xuqiu.com/requirements',
-            android_game_version: '234234',
-            android_package_size: '50',
-            android_sub_url: '',
-            app_id: 11111,
-            category: '休闲放置',
-            cch_id: 222,
-            compatible_os: '1|2',
-            h5_dst_url: '',
-            icon_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png',
-            icon_url: 'https://img02.rastargame.com/gameCenter/img/game/icon/n1/2018/09/12/1536734315438.png?imageView2/1/w/110/h/110',
-            img_origin_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png',
-            img_url: 'https://img02.rastargame.com/gameCenter/img/game/cover/n1/2018/09/12/1536734321670.png?imageView2/1/w/660/h/370',
-            ios_app_id_main: 0,
-            ios_download_url: '',
-            ios_sub_url: '',
-            name: 'test',
-            package_name: '1',
-            slogan: '1',
-            top: true,
-            type: 0
-          }
-        ]
       }
     },
     methods: {
       refresh: function (done) {
-        console.log(666)
+        this.getIndexInfo()
         done()
       },
-      infinite: function () {
-        console.log(7777)
+      getIndexInfo: function () {
+        this.$ajax.get(api.getIndex).then((res)=>{
+          this.banner = res.data.banner
+          this.movieList = res.data.hotMovieList.map((item)=>{
+            item.movie_tags = item.movie_tags.split(',')
+            return item
+          })
+          res.data.activity.forEach((item,index)=>{
+            switch (item.activity_id) {
+              case "1":
+                this.activity[0].activity_item.push(item)
+                break;
+              case "2":
+                this.activity[1].activity_item.push(item)
+                break;
+              case "3":
+                this.activity[2].activity_item.push(item)
+                break;
+            }
+          })
+          console.log(this.activity)
+          // this.activity = res.data.activity
+        }).catch((error)=>{
+          console.log(error)
+        })
       }
     },
     created: function () {
-      console.log('sssawddawdasdwasdwa')
-      let url = 'www.chaos.com/login.php' 
-      let url2 = 'www.chaos.com/login.php?username=chaos&password=5555555'
-      this.$ajax.get(url,{
-        params:{
-          username: 'chaos',
-          password: '55555',
-        }
-      }).then((res)=>{
-        console.log('username', this.username)
-        this.username = res.data.data.username
-        console.log(res.data.data)
-      }).catch((error)=>{
-        console.log(error)
-      })
+      this.getIndexInfo()
     }
   }
 </script>
