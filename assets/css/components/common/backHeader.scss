@@ -20,4 +20,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .right-btn {
+        position: absolute;
+        font-size: .75rem;
+        right: .5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }

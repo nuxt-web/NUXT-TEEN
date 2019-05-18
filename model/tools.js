@@ -26,6 +26,16 @@ const tools = {
       return []
     }
   },
+  setSession: function (name, value) {
+    sessionStorage.setItem(name, JSON.stringify(value))
+  },
+  getSession: function (name) {
+    if (sessionStorage.getItem(name)) {
+      return JSON.parse(sessionStorage.getItem(name))
+    } else {
+      return
+    } 
+  }
 }
 
 

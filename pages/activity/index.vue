@@ -17,7 +17,7 @@
     <!-- <list></list> -->
     <div class="page-main">
         <!-- <teen-scroller> -->
-            <item></item>
+            <item :itemList="topicList"></item>
         <!-- </teen-scroller> -->
     </div>
 </div> 
@@ -25,20 +25,33 @@
 <script>
 import Item from '../../components/topic/item.vue'
 import TeenScroller from '../../components/global/scroller'
+import {getFetch} from '../../model/request'
+import Api from '../../model/api'
 export default {
     components: {
         Item,
         TeenScroller
     },
-    methods: {
-        pushTopic (done) {
-            console.log('push')
-            done()
-        },
-        pullTopic (done) {
-            console.log('pull')
-            done(true)
+    data: function () {
+        return {
+            topicList: []
         }
+    },
+    methods: {
+        async pushTopic () {
+            let res = await getFetch(Api.getTopicList)
+            if (res.data.code === 200) {
+                this.topicList = res.data.data
+            }
+            // console.log(res, '话题列表')
+            // console.log('push')
+        },
+        pullTopic () {
+            console.log('pull')
+        }
+    },
+    mounted: function () {
+        this.pushTopic()
     }
 }
 </script>

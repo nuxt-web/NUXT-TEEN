@@ -7,6 +7,9 @@
             <!-- 4条回复 -->
             {{backTitle}}
         </p>
+        <p class="right-btn">
+            <slot name="right"></slot>
+        </p>
     </div>
 </template>
 <script>
