@@ -3,7 +3,7 @@
     <back-header :backTitle="'四条回复'"></back-header>
     <topic-post :postType = "'2'"></topic-post>
     <reply-filter></reply-filter>
-    <reply-item v-for="i in 3" @showReply="showReply"></reply-item>
+    <reply-item v-for="(i,index) in 3" @showReply="showReply" :key="index"></reply-item>
     <common-mask></common-mask>
     <transition name="fade">
         <reply-edit v-if="isShowReply" @submitReply="submitReply" @cancelReply="cancelReply"></reply-edit>

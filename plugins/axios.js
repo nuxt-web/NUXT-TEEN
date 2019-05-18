@@ -6,5 +6,4 @@ import axios from 'axios'
 export default () => {
   // axios.defaults.withCredentials=true
   Vue.prototype.$ajax = axios
-  Vue.use(axios)
 }

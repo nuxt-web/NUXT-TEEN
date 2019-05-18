@@ -84,65 +84,6 @@
       }
     },
     methods: {
-      goPage: function (route) {
-        switch (route) {
-          case 'lottery':
-            this.$router.push({name: route})
-            break
-          // 普通页跳转
-          case 'about':
-          case 'me':
-          case 'customer':
-            if (route === 'about') this.trackEvent('关于')
-            else if (route === 'me') this.trackEvent('编辑资料')
-            else if (route === 'customer') this.trackEvent('客服中心')
-            this.$router.push({name: route})
-            break
-          // case 'scoreShop':
-          //     window.location.href = window.CUSTOM_DOMAIN + '/shop/'
-          //     break
-          case 'feedback':
-            window._hmt.push(['_trackEvent', '我的主页', '点击', '意见反馈'])
-            window.location.href = window.CUSTOM_DOMAIN + '/bbs/channel/9'
-            break
-          // 敬请期待
-          case 'starCoin':
-            window._hmt.push(['_trackEvent', '我的主页', '点击', '星币充值'])
-            break
-          case 'shop':
-          case 'changePwd':
-            if (route === 'shop') this.trackEvent('积分商城')
-            else this.trackEvent('修改密码')
-            this.$router.push({name: route})
-            break
-          // 需要登录才能进的页
-          case 'getScore':
-          case 'security':
-          case 'score':
-          case 'level':
-          case 'gameBox':
-          case 'myGame':
-          case 'myNotice':
-            if (route === 'getScore') this.trackEvent('赚取积分')
-            else if (route === 'security') this.trackEvent('安全中心')
-            else if (route === 'score') this.trackEvent('我的积分')
-            else if (route === 'level') this.trackEvent('我的等级')
-            else if (route === 'gameBox') this.trackEvent('存宝箱')
-            else if (route === 'myGame') this.trackEvent('我的游戏')
-            else if (route === 'myNotice') this.trackEvent('消息')
-            let userInfo = this.$xh.getCookieArray('_XH_U_CL')
-            if (userInfo[0]) {
-              this.$router.push({
-                name: route
-              })
-            } else {
-              this.$router.push({
-                name: 'login'
-              })
-            }
-            break
-        }
-      },
       getrtef: function (done) {
         console.log(444)
         done()
@@ -162,7 +103,8 @@
       },
     },
     created: function(){
-      let uid = tools.getCookie('_TEEN_')
+      // console.log(TouchList)
+      let uid = this.$tools.getCookie('_TEEN_')
       if (uid) {
         this.getUserInfo(uid)
       }else {

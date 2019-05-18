@@ -8,7 +8,7 @@
 
     <div class="page-wrapper">
       <teen-scroller ref="scroller" padding='2.4rem' :refresh="pushNewsList" :infinite="pullNewsList" @scroll="onScroll">
-        <div class="news-item" v-for="i in 5" @click="goPage()">
+        <div class="news-item" v-for="(i,index) in 5" @click="goPage()" :key="index">
           <div class="news-img img-loading">
             <img src="" alt="">
           </div>

@@ -17,7 +17,7 @@
         <movie-list :movieList="movieList"></movie-list>
 
         <!--电影swiper-->
-        <movie-swiper v-for="item in activity" :activities="item.activity_item" :title="item.activity_name"></movie-swiper>
+        <movie-swiper v-for="(item,index) in activity" :activities="item.activity_item" :title="item.activity_name" :key="index"></movie-swiper>
 
 
       </teen-scroller>

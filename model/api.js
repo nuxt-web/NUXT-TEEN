@@ -1,4 +1,4 @@
-let base = 'http://teen.com/teen/entry'
+let base = 'http://teen.com/nuxt/entry'
 
 export default{
   getIndex: base + '/index.php',
@@ -18,7 +18,7 @@ export default{
 
   // 获取文章列表
   getPostList: base + '/postList.php',
-  
+
   // 添加文章
   addPost: base + '/addPost.php',
 

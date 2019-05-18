@@ -126,7 +126,7 @@
         this.$router.back()
       },
       doSeeMovie: function (type) {
-        let uid = tools.getCookie('_TEEN_')
+        let uid = this.$tools.getCookie('_TEEN_')
         let params = {
           movie_id :this.movie.movie_id,
           uid: uid
@@ -147,7 +147,7 @@
         })
       }
     },
-    created: function () {
+    mounted: function () {
       this.movie_id = this.$route.params.id
       this.getMovieDetail();
       this.doSeeMovie()

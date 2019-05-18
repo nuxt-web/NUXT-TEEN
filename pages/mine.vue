@@ -62,7 +62,6 @@
   import TeenFooter from "./../components/global/footer"
   import MineTab from "./../components/mine/MineTab"
   import api from "../model/api.js"
-  import tools from "../model/tools.js"
 
   export default {
     name: 'mine',
@@ -125,8 +124,9 @@
         })
       },
     },
-    created: function () {
-      let uid = tools.getCookie('_TEEN_')
+    mounted: function () {
+      // console.log(this)
+      let uid = this.$tools.getCookie('_TEEN_')
       if (uid) {
         this.getUserInfo(uid)
       }else {
