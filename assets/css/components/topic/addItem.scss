@@ -1,0 +1,20 @@
+.items {
+    .item {
+        width: 100%;
+        padding: .5rem 1rem;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        font-size: .75rem;
+        img {
+            width: 3rem;
+            height: 3rem;
+        }
+        .info {
+            margin-left: 1rem;
+            .title {
+                margin-bottom: .5rem;
+            }
+        }
+    }
+}
