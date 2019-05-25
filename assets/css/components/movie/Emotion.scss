@@ -1,0 +1,105 @@
+@import './../../common/variable';
+
+
+// 资讯详情标题栏
+.title-ellipsis{
+    @include ellipsis(1)
+}
+
+.emotion{
+    width: 100%;
+    height: 13.5rem;
+    background-color: #31A6D2;
+    position: absolute;
+    bottom: 0;
+
+
+    .options{
+        height: 11.5rem;
+        background-color:#ECEFF4;
+
+        .swiper-container {
+            height: 11.5rem;
+
+            .swiper-slide {
+              .options-content{
+                  position: relative;
+                  padding: .75rem;
+                  display: flex;
+                  justify-content: flex-start;
+                  flex-wrap: wrap;
+                  align-content: flex-start;
+                  box-sizing: border-box;
+                  height: 10rem;
+                  .exp {
+                    width:3.75rem;
+                    height: 3.75rem;
+                    margin-right: .55rem;
+                    margin-bottom: .8rem;
+                    overflow: hidden;
+                    }
+                  .emoticons {
+                    display: flex;
+                    width: 3.75rem;
+                    height: 1.5rem;
+                    margin-right: .5rem;
+                    margin-bottom: .8rem;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                      font-size: .7rem;
+                      text-overflow:ellipsis;
+                      overflow: hidden;
+                      white-space: nowrap;
+                    }
+                  }
+                }
+            }
+
+        }
+
+    }
+
+    .emotionType{
+        height: 2rem;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-wrap: nowrap;
+
+        .delete{
+            height: inherit;
+            width: 2rem;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: -1px 0 1px 1px #ccc
+        }
+
+        .swiper-container {
+            width: 100%;
+
+            .swiper-wrapper{
+                width: 2rem;
+            }
+            .swiper-slide {
+                width: auto !important;
+
+                .type-item{
+                  height: inherit;
+                  width: 2rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  .type-img{
+                    width: 50%;
+                    height: 50%;
+                  }
+                }
+                .target{
+                    background-color:#ECEFF4;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 <template>
+<div>
   <teen-scroller ref="scroller">
     <div class="mine-card mine-list">
       <div class="mine-list-item" @click="goPage('myGame')">
@@ -39,7 +40,9 @@
         </div>
       </div>
     </div>
+    <div class="mine-btn" @click="loginOut">退出账号</div>
   </teen-scroller>
+</div>
 </template>
 
 <script>
@@ -49,6 +52,11 @@
     components: {
       TeenScroller
     },
+    data: function () {
+      return {
+        showLogout: false,
+      }
+    },
     methods: {
       getrtef: function (done) {
         console.log(444)
@@ -56,6 +64,10 @@
       },
       onScroll: function () {
         console.log('onscroll')
+      },
+      loginOut: function () {
+        this.$tools.clearCookie('_TEEN_')
+        
       }
     }
   }

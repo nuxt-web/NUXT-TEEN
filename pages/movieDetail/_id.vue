@@ -54,7 +54,7 @@
             <div class="comment-label">
               <p>网友评价</p>
             </div>
-            <div class="comment-card" v-for="item in comment">
+            <div class="comment-card" v-for="(item,index) in comment" :key="index">
               <div class="comment-avator">
                 <img :src="item.avator" alt="">
               </div>
@@ -73,6 +73,9 @@
           </div>
         </div>
       </teen-scroller>
+      <div class="addTopic" @click="addTopic" v-if="uid">
+        <img src="./../../static/images/addTopic.png" alt="">
+      </div>
     </section>
   </div>
 </template>
@@ -82,6 +85,7 @@
   import TeenScroller from "../../components/global/teenScroller";
   import api from "../../model/api.js"
   import tools from "../../model/tools.js"
+  import {getFetch} from "../../model/request.js"
   export default {
     name: "movieDetail",
     components: {
@@ -102,25 +106,37 @@
           background_color: '#FF0000',
           movie_type: ''
         },
+        uid: '',
         watched: false,
         comment: []
       }
     },
+    asyncData (content) {
+      return getFetch(api.getMovieDetail, {movie_id: content.route.params.id}).then((res)=>{
+        return {
+          movie: res.data.data,
+          comment: res.data.comment
+        }
+      })
+    },
     methods: {
-      getMovieDetail:function () {
-          this.$ajax.get(api.getMovieDetail,{
-            params:{
-              movie_id: this.movie_id
-            }
-          }).then((res)=>{
-            if (res.data.code == 200) {
-              this.movie = res.data.data
-              this.comment = res.data.comment
-              this.doSeeMovie()
-            }
-          }).catch((error)=>{
-            console.log(error)
-          })
+      // getMovieDetail:function () {
+      //     this.$ajax.get(api.getMovieDetail,{
+      //       params:{
+      //         movie_id: this.movie_id
+      //       }
+      //     }).then((res)=>{
+      //       if (res.data.code == 200) {
+      //         this.movie = res.data.data
+      //         this.comment = res.data.comment
+      //         this.doSeeMovie()
+      //       }
+      //     }).catch((error)=>{
+      //       console.log(error)
+      //     })
+      // },
+      addTopic: function () {
+        this.$router.push({name: 'replyPage-movie_id',params:{movie_id: this.movie_id}})
       },
       goBack: function () {
         this.$router.back()
@@ -149,7 +165,8 @@
     },
     mounted: function () {
       this.movie_id = this.$route.params.id
-      this.getMovieDetail();
+      this.uid = this.$tools.getCookie('_TEEN_')
+      // this.getMovieDetail();
       this.doSeeMovie()
     }
   }

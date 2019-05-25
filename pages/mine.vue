@@ -9,8 +9,8 @@
           <div class="avatar" v-if="isLogin">
             <img :src="userInfo.avator" alt="">
           </div>
-          <div class="edit" @click="goPage('me')" v-if="isLogin">
-            <p>账号资料</p>
+          <div class="edit" @click="logout" v-if="isLogin">
+            <p>退出登陆</p>
           </div>
           <div class="edit" @click="goPage('login')" v-if="!isLogin">
             <p>前往登陆</p>
@@ -34,7 +34,10 @@
       </section>
     </div>
 
-    <!--<div class="mine-btn" @click="showLogoutDialog" v-if="isLogin">退出账号</div>-->
+    <div v-if="!isLogin" class="reg">
+      <p>还没有账号？点击 <span @click="goPage('register')">注册</span> 吧</p>
+    </div>
+
     <div class="mine-bg"></div>
 
     <teen-footer></teen-footer>
@@ -123,9 +126,12 @@
           console.log(error)
         })
       },
+      logout: function () {
+        this.$tools.clearCookie('_TEEN_')
+        this.$router.push({name: 'teen'})
+      }
     },
     mounted: function () {
-      // console.log(this)
       let uid = this.$tools.getCookie('_TEEN_')
       if (uid) {
         this.getUserInfo(uid)

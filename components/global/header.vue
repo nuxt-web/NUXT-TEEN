@@ -53,7 +53,7 @@
       },
       // 双击回到顶部
       backToTop: function () {
-        this.$store.dispatch('backToTop')
+        // this.$store.dispatch('backToTop')
       }
     }
   }

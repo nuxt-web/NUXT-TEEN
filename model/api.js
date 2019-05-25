@@ -23,5 +23,7 @@ export default{
   addPost: base + '/addPost.php',
 
   // 搜索话题
-  selectTopic: base + '/selectTopic.php'
+  selectTopic: base + '/selectTopic.php',
+
+  addTopic: base + '/addMovieComment.php'
 }

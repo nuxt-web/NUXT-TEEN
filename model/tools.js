@@ -26,6 +26,14 @@ const tools = {
       return []
     }
   },
+  // 清除cookie
+  clearCookie: function(name) {
+    let exp = new Date()
+    exp.setTime(exp.getTime() - 1)
+    document.cookie = name + '=' + ' ' + ';expires=' + exp.toGMTString();
+  },
+
+
   setSession: function (name, value) {
     sessionStorage.setItem(name, JSON.stringify(value))
   },

@@ -34,7 +34,7 @@
       <div class="diray-title">
         <span>我的电影日记</span>
       </div>
-      <div class="diray-item" v-for="item in diary">
+      <div class="diray-item" v-for="(item,index) in diary" :key="index">
         <div class="item-title">
           <div class="spot"></div>
           <div class="time">
@@ -54,33 +54,11 @@
 <script>
   import TeenScroller from './../../components/global/teenScroller'
   import api from "../../model/api.js"
-  import tools from "../../model/tools.js"
   export default {
     name: 'mineIndex',
     data: function () {
       return {
-        diary: [
-          {
-            time: '2018-06-17',
-            imgUrl: require('../../static/images/BLUE1.jpg')
-          },
-          {
-            time: '2018-06-17',
-            imgUrl: require('../../static/images/KISS.jpg')
-          },
-          {
-            time: '2018-06-17',
-            imgUrl: require('../../static/images/LIFTRES.jpg')
-          },
-          {
-            time: '2018-06-17',
-            imgUrl: require('../../static/images/VEMON.jpg')
-          },
-          {
-            time: '2018-06-17',
-            imgUrl: require('../../static/images/COMEDY.jpg')
-          }
-        ]
+        diary: []
       }
     },
     methods: {

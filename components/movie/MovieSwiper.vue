@@ -50,7 +50,6 @@
         })
       },
       goMovieDetail: function (id) {
-        console.log(789789)
         this.$router.push({ name: 'movieDetail-id',params: { id: id}})
       },
     },

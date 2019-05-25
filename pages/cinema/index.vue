@@ -194,7 +194,6 @@
         },
         playVideo: function () {
           this.$refs.scroller.scrollTo(0, true)
-          this.$store.dispatch('backToTop')
           setTimeout(() => {
             this.$refs.video.playing()
           }, 500)
