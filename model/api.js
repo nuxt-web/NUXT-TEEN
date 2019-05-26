@@ -25,5 +25,9 @@ export default{
   // 搜索话题
   selectTopic: base + '/selectTopic.php',
 
-  addTopic: base + '/addMovieComment.php'
+  addTopic: base + '/addMovieComment.php',
+
+  register: base + '/register.php',
+
+  setAvatar: base + '/setAvatar.php'
 }

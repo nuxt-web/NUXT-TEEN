@@ -6,7 +6,7 @@
           <div class="avatar" v-if="!isLogin">
             <img src="./../static/mine/corn.png" alt="">
           </div>
-          <div class="avatar" v-if="isLogin">
+          <div class="avatar" v-if="isLogin" @click="changeAvatar">
             <img :src="userInfo.avator" alt="">
           </div>
           <div class="edit" @click="logout" v-if="isLogin">
@@ -96,6 +96,9 @@
       getrtef: function (done) {
         console.log(444)
         done()
+      },
+      changeAvatar: function () {
+        this.$router.push({name: 'meHead'})
       },
       // 滑动事件
       onScroll: function (scroll) {

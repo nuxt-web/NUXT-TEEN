@@ -182,7 +182,7 @@
                 })
             }
         },
-        created: function () {
+        mounted: function () {
             this.getEmjClass()
             this.movie_id = this.$route.params.movie_id,
             this.uid = this.$tools.getCookie('_TEEN_')

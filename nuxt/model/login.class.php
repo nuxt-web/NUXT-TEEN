@@ -29,4 +29,19 @@ class Login{
             }
         }
     }
+
+
+    public function register($username, $pass) {
+        $avator = 'http://mydatabase.com/user/corn.png';
+        $watched_movie = 0;
+        $time = time();
+        $uid = md5($time.$username);
+        $sql = "INSERT INTO user_info VALUES ('{$username}','{$uid}','{$username}','{$pass}','{$avator}','{$watched_movie}')";
+        $res = $this->link->sql_inset($sql);
+        if ($res) {
+            return array('code'=>'200','status'=>'注册成功');
+        } else {
+            return array('code'=>'400','status'=>'注册失败');
+        }
+    }
 }

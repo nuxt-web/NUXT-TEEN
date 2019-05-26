@@ -1,0 +1,67 @@
+@import './../../common/variable';
+
+.my-head {
+    .my-head-list {
+        height: 15rem;
+        padding: .75rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        .head-img {
+            margin-bottom: .5rem;
+            width: 3.75rem;
+            height: 3.75rem;
+            position: relative;
+            &.active img {
+                border-color: $color-primary-deep;
+            }
+            &.active:after {
+                content: '\e608';
+                font-family: 'iconfont';
+                font-size: .7rem;
+                color: $color-primary-deep;
+                position: absolute;
+                right: .15rem;
+                bottom: .25rem;
+                width: .7rem;
+                height: .7rem;
+                text-align: center;
+                line-height: .7rem;
+                background: #ededed;
+                border-radius: 50%;
+            }
+            img {
+                width: 3.75rem;
+                height: 3.75rem;
+                display: block;
+                border-radius: 50%;
+                border: .05rem solid transparent;
+            }
+        }
+    }
+    
+}
+
+
+.me-btn {
+    // position: fixed;
+    // bottom: 2rem;
+    margin-top: 5rem;
+    width: 100%;
+    padding: 0 .75rem;
+    box-sizing: border-box;
+    .btn {
+        width: 100%;
+        height: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        line-height: 2rem;
+        font-size: .7rem;
+        color: $color-white;
+        @include gradient($color-primary-deep, $color-primary-light);
+        &.disabled {
+            background: $color-disabled;
+        }
+    }
+}

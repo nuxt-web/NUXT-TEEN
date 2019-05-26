@@ -96,4 +96,13 @@ class Database{
             return $res;
         }
     }
+
+    public function sql_update($sql){
+        $res = $this->link->query($sql);
+        if (!$res) {
+            die('Charset Error('.$this->link->errno.')'.$this->link->error);
+        } else {
+            return array('code'=> 200, 'status'=> '操作成功','data'=>true);
+        }
+    }
 }
