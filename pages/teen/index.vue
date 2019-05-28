@@ -10,15 +10,20 @@
 
     <section class="page-wrapper">
       <teen-scroller padding="2.4rem" :refresh="refresh">
+
         <!--banner-->
         <swiper-banner ref="swiperBanner" :banners="banner"></swiper-banner>
+
+        <!-- 电影预告片 -->
+        <video-card :game="movieVideo"></video-card>
 
         <!--热门电影-->
         <movie-list :movieList="movieList"></movie-list>
 
+        <video-card :game="movieVideo"></video-card>
+
         <!--电影swiper-->
         <movie-swiper v-for="(item,index) in activity" :activities="item.activity_item" :title="item.activity_name" :key="index"></movie-swiper>
-
 
       </teen-scroller>
     </section>
@@ -33,6 +38,7 @@
   import SwiperBanner from "../../components/global/swiperBanner";
   import MovieList from "../../components/movie/MovieList"
   import MovieSwiper from "../../components/movie/MovieSwiper"
+  import VideoCard from '../../components/global/gameVideoCard'
   import api from "../../model/api.js"
 
   export default {
@@ -43,7 +49,8 @@
       SwiperBanner,
       MovieList,
       MovieSwiper,
-      TeenFooter
+      TeenFooter,
+      VideoCard
     },
     data: function () {
       return {
@@ -79,6 +86,18 @@
             activity_item: [],
           }
         ],
+        movieVideo: {
+          icon_origin_url: "http://mydatabase.com/movie/doraamen.jpg",
+          icon_url: "http://mydatabase.com/movie/doraamen.jpg",
+          name: "大雄的月球奇遇记",
+          slogan: "月球探测器在月亮上捕捉到了白影，大雄认为这道白影是月亮上的兔子，惹来了大家的耻笑，于是哆啦A 梦为了帮助大雄，利用道具“异说俱乐部徽章”，在月球背面制造了一个兔子王国。一天，神秘少年露卡转学而来，与大雄…",
+          type: 2,
+          video: {
+            // video_img: "http://mydatabase.com/video_poster/doraamen.png",
+            video_img: "",
+            video_url: "http://mydatabase.com/video/doraamen.mp4"
+          }
+        }
       }
     },
     methods: {

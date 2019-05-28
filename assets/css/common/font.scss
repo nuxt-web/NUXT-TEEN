@@ -83,4 +83,17 @@
     &.expression::before {
       content: '\e67a';
     }
+    &.play::before {
+      content: '\e629';
+    }
+    &.pause::before {
+        content: '\e65c';
+    }
+
+    &.userHead::before {
+      content: '\e649';
+    }
+    &.userPwd::before {
+        content: '\e63e';
+    }
   }

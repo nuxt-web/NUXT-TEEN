@@ -1,6 +1,6 @@
 <template>
   <section class="video-box" id="videoBox">
-    <div class="ios-video" v-if="system === 'iOS'">
+    <div class="ios-video">
       <video-player :options="playerOptions" ref="videoBox" :playsinline="true" @pause="onPlayerPause($event)" @waiting="onPlayerWaiting($event)"
                     @playing="onPlayerPlaying($event)"></video-player>
       <transition name="fade">
@@ -15,14 +15,14 @@
       </transition>
       <div class="playing-mask" @click="showPause"></div>
     </div>
-    <div class="android-video" v-if="system === 'android'">
+    <!-- <div class="android-video" v-if="system === 'android'">
       <div class="android-video-inner">
         <img :src="poster">
         <p class="video-playing">
           <i @click="openVideo" class="icon play"></i>
         </p>
       </div>
-    </div>
+    </div> -->
   </section>
 
 </template>
@@ -58,10 +58,8 @@
     methods: {
       // 开始播放
       playing: function () {
-        if (this.page === 'detail') window._hmt.push(['_trackEvent', '游戏详情页', '播放', '游戏视频'])
-        else window._hmt.push(['_trackEvent', '游戏中心（首页）', '播放', '游戏视频'])
-        if (this.system === 'iOS') this.player.play()
-        else this.openVideo()
+        this.player.play()
+        // this.openVideo()
       },
       // 暂停播放
       pause: function () {
