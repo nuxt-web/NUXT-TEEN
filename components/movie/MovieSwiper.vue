@@ -54,7 +54,6 @@
       },
     },
     created: function () {
-      console.log(this.activities)
       this.list = this.activities
     }
   }

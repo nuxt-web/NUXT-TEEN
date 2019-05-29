@@ -15,14 +15,6 @@
       </transition>
       <div class="playing-mask" @click="showPause"></div>
     </div>
-    <!-- <div class="android-video" v-if="system === 'android'">
-      <div class="android-video-inner">
-        <img :src="poster">
-        <p class="video-playing">
-          <i @click="openVideo" class="icon play"></i>
-        </p>
-      </div>
-    </div> -->
   </section>
 
 </template>
