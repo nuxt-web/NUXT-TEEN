@@ -2,7 +2,7 @@
   <div class="game-page-banner">
     <swiper :options="swiperOption" ref="mySwiper" v-if="showEl">
       <swiper-slide v-for="(banner, index) in banners" :key="index">
-        <div class="swiper-img img-loading" @click="goBanner(index)">
+        <div class="swiper-img img-loading" @click="goMovieDetail(banner.movie_id)">
           <img :src="banner.img_url">
         </div>
       </swiper-slide>
@@ -85,7 +85,10 @@
         this.$nextTick(() => {
           this.showEl = true
         })
-      }
+      },
+      goMovieDetail: function (id) {
+        this.$router.push({ name: 'movieDetail-id',params: { id: id}})
+      },
     }
   }
 </script>

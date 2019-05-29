@@ -1,0 +1,57 @@
+.upload-page {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .img-holder {
+        width: 33.33vw;
+        height: 33.33vw;
+        overflow: hidden;
+        padding: .3rem;
+        .img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .edit-area {
+        width: 33.33vw;
+        height: 33.33vw;
+        padding: .3rem;
+        position: relative;
+        input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            opacity: 0;
+        }
+        .add-button {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: .5rem;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            position: relative;
+            .cross {
+                width: 80%;
+                height: 1px;
+                background: #cccccc;
+                position: absolute;
+                top: 50%;
+                left: 10%;
+            }
+            .vertical {
+                width: 1px;
+                height: 80%;
+                background: #cccccc;
+                position: absolute;
+                top: 10%;
+                left: 50%;
+            }
+        }
+    }
+}

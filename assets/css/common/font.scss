@@ -1,11 +1,19 @@
+// @font-face {
+//   font-family: 'iconfont';  /* project id 1105176 */
+//   src: url('//at.alicdn.com/t/font_1105176_5czom84wwf6.eot');
+//   src: url('//at.alicdn.com/t/font_1105176_5czom84wwf6.eot?#iefix') format('embedded-opentype'),
+//   url('//at.alicdn.com/t/font_1105176_5czom84wwf6.woff2') format('woff2'),
+//   url('//at.alicdn.com/t/font_1105176_5czom84wwf6.woff') format('woff'),
+//   url('//at.alicdn.com/t/font_1105176_5czom84wwf6.ttf') format('truetype'),
+//   url('//at.alicdn.com/t/font_1105176_5czom84wwf6.svg#iconfont') format('svg');
+// }
 @font-face {
-  font-family: 'iconfont';  /* project id 1105176 */
-  src: url('//at.alicdn.com/t/font_1105176_tv1nts235.eot');
-  src: url('//at.alicdn.com/t/font_1105176_tv1nts235.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1105176_tv1nts235.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1105176_tv1nts235.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1105176_tv1nts235.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1105176_tv1nts235.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 417156 */
+  src: url('//at.alicdn.com/t/font_417156_mazwsra6tb.eot');
+  src: url('//at.alicdn.com/t/font_417156_mazwsra6tb.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_417156_mazwsra6tb.woff') format('woff'),
+  url('//at.alicdn.com/t/font_417156_mazwsra6tb.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_417156_mazwsra6tb.svg#iconfont') format('svg');
 }
 
   .icon {
@@ -29,7 +37,7 @@
     }
 
     &.pull::before {
-      content: '\e624';
+      content: '\e798';
     }
 
     &.select::before {
@@ -50,5 +58,42 @@
 
     &.heat::before {
       content: '\e64a';
+    }
+
+    &.zan::before {
+      content: '\e6c5';
+    }
+
+    &.up::before {
+      content: '\e797';
+    }
+
+    &.add::before {
+      content: '\e60e';
+    }
+
+    &.close::before {
+      content: '\e713';
+    }
+
+    &.keyboard::before {
+      content: '\e67c';
+    }
+
+    &.expression::before {
+      content: '\e67a';
+    }
+    &.play::before {
+      content: '\e629';
+    }
+    &.pause::before {
+        content: '\e65c';
+    }
+
+    &.userHead::before {
+      content: '\e649';
+    }
+    &.userPwd::before {
+        content: '\e63e';
     }
   }

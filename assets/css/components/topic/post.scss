@@ -43,6 +43,30 @@
             padding: .75rem 0;
             font-size: .75rem;
         }
+        .post-img {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            .img {
+                width: 33%;
+                height: auto;
+                padding: .3rem;
+                .item {
+                    width: 100%;
+                    padding-bottom: 100%;
+                    height: 0;
+                    position: relative;
+                    .item-img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
         .label {
             // margin-left: .5rem;
             color: #FF9933;
@@ -56,7 +80,8 @@
             margin-top: .75rem;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
+            justify-content: flex-end;
             .like {
                 position: relative;
                 .circle {

@@ -1,27 +1,37 @@
 <template>
     <div>
-        <div class="item" v-for="i in 6">
-            <img class="img" src="../../../static/images/graphic.jpeg" alt="">
+        <div class="item" v-for="i in graphicList" @click="goPage(i.id)">
+            <img class="img" :src="i.cover_img" alt="">
             <div class="mask">
                 <div class="info">
-                    <i class="icon like">
+                    <!-- <i class="icon like">
                         <span class="num">7.4k</span>
-                    </i>
-                    <i class="icon view">
+                    </i> -->
+                    <!-- <i class="icon view">
                         <span class="num">10k</span>
-                    </i>
+                    </i> -->
                 </div>
-                <p class="text">流浪地球 -- by 蛋炒饭</p>
+                <p class="text">{{i.name}}</p>
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
-    
+    props: ['graphicList'],
+    methods: {
+        goPage (id) {
+            this.$router.push({
+                name: 'graphic-intro',
+                params: {
+                    intro: id
+                }
+            })
+        }
+    }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .item {
         width: 90%;
         height: 9rem;

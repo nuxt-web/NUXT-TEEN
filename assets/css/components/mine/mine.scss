@@ -1,6 +1,10 @@
 @import './../../common/variable.scss';
 
 // 我的页 背景弧形
+section{
+  width: 100%;
+  position: fixed;
+}
 .mine-bg {
   width: 100%;
   @include gradient(#FFDE02, yellow);
@@ -65,7 +69,7 @@
         padding: .2rem;
         line-height: 1rem;
         font-size: .75rem;
-        color:yellow;
+        color:black;
         border: 1px yellow solid;
       }
     }
@@ -287,4 +291,19 @@
   line-height: 2rem;
   color: $color-text-light;
   font-size: .75rem;
+}
+
+.reg{
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .75rem;
+  color: gray;
+
+  span{
+    color: black;
+    font-size: 1rem;
+  }
 }

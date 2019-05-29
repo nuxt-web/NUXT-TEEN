@@ -1,31 +1,31 @@
 <template>
-  <header @click="backToTop" class="rastar-header" :class="[{'rastar-header-transparent': withoutBg}, {'rastar-header-fill': redBg}]">
-    <div :style="{background : color?color.bg_main:''}" v-if="special" class="header-content">
-      <div v-if="back" class="rastar-back" @click="goBack" :style="{color: color ? color.body_main : ''}">
+  <header @click="backToTop" class="teen-header" :class="[{'teen-header-transparent': withoutBg}, {'teen-header-fill': redBg}]">
+    <div :style="{background : color?color:''}" v-if="special" class="header-content">
+      <div v-if="back" class="teen-back" @click="goBack" :style="{color: color ? color : ''}">
         <i class="icon left"></i>
       </div>
-      <div v-else class="rastar-back">
+      <div v-else class="teen-back">
         <slot name="back"></slot>
       </div>
-      <div class="rastar-title" :style="{color: color ? color.body_main : ''}">
+      <div class="teen-title" :style="{color: color ? color : ''}">
         <slot name="title"></slot>
       </div>
-      <div class="rastar-filter" :style="{color: color ? color.page_import : ''}">
+      <div class="teen-filter" :style="{color: color ? color : ''}">
         <slot class="filter" name="filter"></slot>
       </div>
       <slot></slot>
     </div>
-    <div :style="{background : color?color.bg_supply:''}" v-else class="header-content">
-      <div v-if="back" class="rastar-back" @click="goBack" :style="{color: color ? color.body_main : ''}">
-        <i class="icon left"></i>
+    <div :style="{background : color?color:''}" v-else class="header-content">
+      <div v-if="back" class="teen-back" @click="goBack" :style="{color: color ? color : ''}">
+          <img src="./../../static/images/back.png" alt="">
       </div>
-      <div v-else class="rastar-back">
+      <div v-else class="teen-back">
         <slot name="back"></slot>
       </div>
-      <div class="rastar-title" :style="{color: color ? color.body_main : ''}">
+      <div class="teen-title" :style="{color: color ? color : ''}">
         <slot name="title"></slot>
       </div>
-      <div class="rastar-filter" :style="{color: color ? color.page_import : ''}">
+      <div class="teen-filter" :style="{color: color ? color: ''}">
         <slot class="filter" name="filter"></slot>
       </div>
       <slot></slot>
@@ -35,7 +35,7 @@
 
 <script>
   export default {
-    name: 'rastarHeader',
+    name: 'teenHeader',
     /**
      * 参数说明
      * back：是否启用默认返回按钮，启用后，slot的back将无效
@@ -53,7 +53,7 @@
       },
       // 双击回到顶部
       backToTop: function () {
-        this.$store.dispatch('backToTop')
+        // this.$store.dispatch('backToTop')
       }
     }
   }

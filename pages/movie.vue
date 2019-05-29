@@ -55,12 +55,8 @@
     },
     methods: {
       refresh: function (done) {
-        console.log(666)
         done()
       },
-      infinite: function () {
-        console.log(7777)
-      }
     }
   }
 </script>

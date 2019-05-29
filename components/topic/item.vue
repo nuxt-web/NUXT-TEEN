@@ -1,20 +1,25 @@
 <template>
     <div class="items">
-        <div class="item" v-for="i in 6" @click="goPage">
+        <div class="item" v-for="item in itemList" @click="goPage(item.id)">
+            <img class="img" :src="item.img" alt="">
             <div class="mask">
-                <p class="name">肖申克的救赎</p>
-                <p class="tip">5256人参与</p>
+                <p class="name">{{ item['name'] }}</p>
+                <!-- <p class="tip">{{ item['attention_num'] }}</p> -->
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
+    props: {
+        itemList: {
+            default: []
+        }
+    },
     methods: {
-        goPage () {
-            this.$router.push({
-                name: 'topic-detail'
-            })
+        goPage (id) {
+            // console.log(id)
+            this.$router.push({ name: 'topic-id',params: { id}})
         }
     }
 }

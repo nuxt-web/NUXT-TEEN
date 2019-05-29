@@ -7,6 +7,7 @@
 
 <script>
   import MovieList from './../../components/movie/MovieList.vue'
+  import api from '../../model/api.js'
   export default {
     name: 'hotLine',
     components: {
@@ -14,21 +15,38 @@
     },
     data: function () {
       return {
-        movieList: []
+        movieList: [
+          {
+            img_url: '',
+            movie_name: '',
+            movie_time: '',
+            movie_slogan: '',
+            movie_tags: []
+          }
+        ]
       }
     },
-    mounted: function () {
-      this.movieList = [
-        {
-          url: require('../../static/images/BLUE1.jpg'),
-          title: '比悲伤更悲伤的故事',
-          time: '2019-3-14',
-          slogan: '唯一观影建议：请带着纸巾',
-          tags: [
-            '6666', '感动', '哭了三分之一', '爱', '6666', '6666'
-          ]
-        }
-      ]
+    methods: {
+      getMovieList: function () {
+        this.$ajax.get(api.getMovieList,{
+          params:{
+            type: 1
+          }
+        }).then((res)=>{
+          res.data.data.map((item)=>{
+            if (item.movie_tags) {
+              item.movie_tags = item.movie_tags.split(',')
+              return item
+            }
+          })
+          this.movieList = res.data.data
+        }).catch((error)=>{
+          console.log(error)
+        })
+      }
+    },
+    created: function () {
+      this.getMovieList()
     }
   }
 </script>

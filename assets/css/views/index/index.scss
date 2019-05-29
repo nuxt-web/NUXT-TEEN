@@ -1,0 +1,94 @@
+@import './../../common/variable.scss';
+
+
+.page-wrapper {
+    position: fixed;
+    width: 100%;
+    /*height: calc(100% - 2.4rem);*/
+    height: 100%;
+    padding-top: 2.4rem;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    &::after {
+      content: '';
+      height: 2.4rem;
+      width: 100%;
+    }
+  }
+
+
+.mine-bg {
+    width: 100%;
+    height: 7.525rem;
+    @include gradient(#FFDE02, yellow);
+    //@include gradient($color-primary-deep, $color-primary-light);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        bottom: -1rem;
+        height: 12.525rem;
+        border: 1rem solid #F6F6F6;
+        background: transparent;
+        transform: translateX(-25.8%);
+        border-radius: 50%;
+    }
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    
+    .logo{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 13rem
+    }
+
+    .btns{
+        width: 100%;
+        height: 10rem;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        .btn{
+            width: 70%;
+            height: 2rem;
+            border-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .75rem;
+
+            &.login{
+                background: #FFDE02;
+                @include gradient(#FFDE02, yellow);
+            }
+
+            &.reg{
+                border: 2px#FFDE02 solid;
+                color: #FFDE02
+            }
+        }
+    }
+
+    .skip{
+        margin: 2rem 2rem;
+        border-top: 2px #EDEDED solid;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }

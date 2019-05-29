@@ -5,173 +5,133 @@
   @include ellipsis(1)
 }
 // 资讯详情
-.news-detail {
-  // 顶部游戏信息
-  height: calc(100% - 2.1rem);
-  .game-info {
-    height: 2.2rem;
-    border-bottom: .025rem solid $color-border;
-    border-top: .025rem solid $color-border;
-    background: #ffffff;
-    padding: 0 .75rem;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    .game-info-des {
-      display: flex;
-      justify-content: flex-start;
-      .game-info-img {
-        margin: .4rem 0;
-        width: 1.4rem;
-        height: 1.4rem;
-        border-radius: $border-radius;
-        img {
-          width: 1.4rem;
-          height: 1.4rem;
-          border-radius: $border-radius;
-          display: block;
-        }
-      }
-      .game-info-body {
-        margin: .4rem 0 .4rem .5rem;
-        height: 1.4rem;
-        &.official {
-          line-height: 1.4rem;
-        }
-        p {
-          font-size: .6rem;
-          color: $color-text-deep;
-        }
-        .game-star {
-          margin-top: .25rem;
-        }
-      }
-    }
-    .game-info-oper {
-      height: .8rem;
-      margin: .7rem 0;
-      line-height: .8rem;
-      p {
-        font-size: .6rem;
-        color: $color-text-deep;
-        i {
-          font-size: .8rem;
-          margin-right: .375rem;
-          &.active {
-            color: $color-red;
-            @include gradient($color-red, $color-yellow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-        }
-      }
-    }
-  } // 资讯内容
-  .news-body {
-    overflow: hidden;
-    background: #fff;
-    .news-title {
-      padding: 0 .75rem;
-      box-sizing: border-box;
-      margin: .75rem 0;
-      >h1 {
-        font-size: .7rem;
-        color: $color-text-deep;
-        font-weight: normal;
-      }
-      .title{
-        font-size: .7rem;
-        color: $color-text-deep;
-        font-weight: normal;
-        line-height: 1rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        word-break: break-all;
-        text-overflow: ellipsis;
-        /* autoprefixer: off */
-        -webkit-box-orient: vertical;
-        /* autoprefixer: on */
-      }
-      .news-extra {
-        display: flex;
-        justify-content: space-between;
-        margin-top: .75rem;
-        font-size: .6rem;
-        color: $color-text-light;
-        .pv{
-          i{
-            margin-right: .25rem;
-          }
-          .active{
-            background:linear-gradient(0deg,rgba(249,91,128,1),rgba(254,188,106,1));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent
-          }
-        }
-      }
-    }
-    .news-content {
-      padding: 0 .75rem;
-      margin: .75rem 0;
-      box-sizing: border-box;
-      p {
-        font-size: .35rem;
-      }
-    }
-    .news-recommend {
-      height: 4.7rem;
-      margin: 0 .75rem;
-      border-top: .025rem solid $color-border;
-      padding: .75rem 0;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      .game-recommend-img {
-        margin-right: .75rem;
-        width: 3.2rem;
-        height: 3.2rem;
-        border-radius: $border-radius;
-        img {
-          display: block;
-          width: 3.2rem;
-          height: 3.2rem;
-          border-radius: $border-radius;
-        }
-      }
-      .game-recommend-info {
-        width: 100%;
-        .name {
-          font-size: .7rem;
-          color: $color-text-deep;
-        }
-        .des {
-          font-size: .6rem;
-          color: $color-text-deep;
-          margin-top: .5rem;
-        }
-        .type {
-          font-size: .6rem;
-          color: $color-text-light;
-          margin-top: .7rem;
-        }
-      }
-      .game-recommend-btns {
-        margin-top: .8rem;
-      }
-    }
-  } // 资讯回复
-  .news-reply {
-    background: #ffffff;
-    margin-top: .25rem;
-    .reply-title {
-      border-bottom: 1px solid $color-border;
-      padding: 0 .75rem;
-      box-sizing: border-box;
+// .news-detail {
+//   // 顶部游戏信息
+//   height: calc(100% - 2.1rem);
+//   .video {
+//     width: 100%;
+//   }
+// }
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: blue;
+  display: flex;
+  flex-direction: column;
+}
+.video {
+  margin-top: 2.1rem;
+  width: 100%;
+  height: auto;
+}
+.video-name {
+  width: 100%;
+  font-size: .85rem;
+  padding: .5rem;
+  color: $color-primary;
+  .tip {
+    color: $color-text-primary;
+  }
+}
+.message-title {
+  width: 100%;
+  padding: .5rem;
+  text-align: center;
+  font-size: .8rem;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.message-list {
+  font-size: .8rem;
+  margin-top: 1rem;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  // padding-bottom: 5rem;
+  padding: 0 .5rem;
+  margin-bottom: 3rem;
+  // background: black;
+  // display: flex;
+  // flex-wrap: wrap;
+  .enter-info {
+    color: $color-text-light;
+    margin-bottom: .5rem;
+    text-align: center;
+  }
+  .message-left, .message-right {
+    margin-bottom: .5rem;
+    width: 100%;
+    height: auto;
+    .user {
       font-size: .7rem;
-      color: $color-text-deep;
-      line-height: 1.65rem;
-      height: 1.65rem;
     }
+    .content {
+      text-align: left;
+      display: inline-block;
+      background: #ffffff;
+      padding: .3rem .5rem;
+      border-radius: .3rem;
+      margin-top: .3rem;
+      max-width: 60%;
+      height: auto;
+      word-break:break-all; 
+    }
+    &.message-left {
+      text-align: left;
+    }
+    &.message-right { 
+      text-align: right;
+      .user {
+        color: $color-primary;
+      }
+    }
+  }
+  // .message-right {
+  //   margin-bottom: .5rem;
+  //   width: 100%;
+  //   text-align: right;
+  //   height: auto;
+  //   .user {
+  //     text-align: right;
+  //   }
+  //   .content {
+  //     text-align: left;
+  //     display: inline-block;
+  //     background: #ffffff;
+  //     padding: .3rem .5rem;
+  //     border-radius: .3rem;
+  //     margin-top: .3rem;
+  //     max-width: 60%;
+  //     height: auto;
+  //     word-break:break-all; 
+  //   }
+  // }
+}
+.edit-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2rem;
+  font-size: .8rem;
+  background: #ffffff;
+  color: $color-primary;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .5rem;
+  input {
+    width: 80%;
+    height: 100%;
+    outline: none;
+    border: none;
+  }
+  .send-btn {
+    width: 20%;
+    height: 100%;
+    text-align: right;
+    line-height: 2rem;
   }
 }

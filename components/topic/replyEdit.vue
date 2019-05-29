@@ -5,7 +5,7 @@
             <p class="submit" @click="submit">发表</p>
         </div>
         <div class="content">
-            <textarea placeholder="请输入回复内容~"></textarea>
+            <textarea ref="text" placeholder="请输入回复内容~"></textarea>
         </div>
     </div>
 </template>
@@ -13,7 +13,8 @@
 export default {
     methods: {
         submit () {
-            this.$emit('submitReply')
+            let content = this.$refs.text.value
+            this.$emit('submitReply', content)
         },
         cancel () {
             this.$emit('cancelReply')

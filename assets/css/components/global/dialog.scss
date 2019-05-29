@@ -1,0 +1,86 @@
+// 弹窗遮罩
+.dialog-mask {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.dialog {
+    width: 16.5rem;
+    height: 9.25rem;
+    background: #fff;
+    border-radius: .25rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    // 弹窗标题
+    .dialog-header {
+        text-align: center;
+        font-size: .75rem;
+        color: #000000;
+        .appointment-title {
+            margin: 1.25rem 0;
+        }
+    }
+    .dialog-body {
+        margin: 0 .75rem;
+        .appointment-input {
+            height: 2.25rem;
+            border-bottom: .05rem solid #4B749D;
+            position: relative;
+            input {
+                height: .75rem;
+                margin: .75rem 0;
+                width: 100%;
+                box-sizing: border-box;
+                padding:  0 .75rem;
+                font-size: .7rem;
+                color: #505050;
+                border: none;
+                outline: none;
+                background: none;
+            }
+            .close {
+                position: absolute;
+                right: .75rem;
+                height: 1rem;
+                width: 1rem;
+                display: block;
+                line-height: 1rem;
+                text-align: right;
+                top: .75rem;
+                font-size: 1rem;
+                color: #ccc;
+            }
+        }
+        .body-title{
+            margin: 2.5rem 0;
+            text-align: center;
+            font-size: .75rem;
+            color: #000000;
+        }
+    }
+    .dialog-footer {
+        margin-top: 1.75rem;
+        .btns {
+            display: flex;
+            justify-content: space-around;
+            .btn {
+                text-align: center;
+                font-size: .75rem;
+                &.cancel {
+                    color: #969696;
+                }
+                &.submit {
+                    color: #4B749D;
+                }
+            }
+        }
+    }
+}

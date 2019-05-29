@@ -4,15 +4,33 @@
             <i class="icon back"></i>
         </p>
         <p class="title">
-            4条回复
+            <!-- 4条回复 -->
+            {{backTitle}}
+        </p>
+        <p class="right-btn">
+            <slot name="right"></slot>
         </p>
     </div>
 </template>
 <script>
 export default {
+    props: {
+        backTitle: {
+            default: ''
+        },
+        selfBack: {
+            default: false
+        }
+    },
+    // props: ['backTitle', 'selfBack'],
     methods: {
         goBack () {
-            this.$router.back()
+            if (this.selfBack) {
+                this.$emit('goBack')
+            } else {
+                this.$router.back()
+            }
+            
         }
     }
 }
