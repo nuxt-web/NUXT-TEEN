@@ -65,9 +65,10 @@ export default {
         },
         async submitReply (content) {
             let date = new Date().getTime() 
+            let {uid} = Tool.getSession('user_info')
             let data = {
                 content,
-                user_id: '100523',
+                user_id: uid,
                 post_id: this.post_id,
                 create_tm: date
             }

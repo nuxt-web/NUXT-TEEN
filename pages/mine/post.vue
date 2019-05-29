@@ -1,6 +1,6 @@
 <template>
   <teen-scroller ref="scroller" :refresh="getrtef" @scroll="onScroll">
-    <div class="me-card post-card">
+    <!-- <div class="me-card post-card">
     <div class="post-head">
       <div class="post-avatar">
         <img src="http://mydatabase.com/user/cat.jpg" alt="">
@@ -83,18 +83,39 @@
           <i class="icon gameIcon"></i>
         </div>
       </div>
-    </div>
+    </div> -->
+    <topic-post :postList="postList" :postType="1"></topic-post>
   </teen-scroller>
 </template>
 
 <script>
   import TeenScroller from './../../components/global/teenScroller'
+  import API from '../../model/api'
+  import { getFetch } from '../../model/request'
+  import Tool from '../../model/tools'
+  import topicPost from './../../components/topic/post.vue'
     export default {
         name: "post",
       components: {
-        TeenScroller
+        TeenScroller,
+        topicPost
+      },
+      data () {
+        return {
+          postList: []
+        }
       },
       methods: {
+        async getUserPost () {
+          let userInfo = Tool.getSession('user_info')
+          let sendData = {
+            user_id: userInfo.uid
+          }
+          let res = await getFetch(API.getPostList, sendData)
+          if (res.data.code === 200) {
+            this.postList = res.data.data
+          }
+        },
         getrtef: function (done) {
           console.log(444)
           done()
@@ -102,6 +123,9 @@
         onScroll: function () {
           console.log('onscroll')
         }
+      },
+      mounted () {
+        this.getUserPost()
       }
     }
 </script>

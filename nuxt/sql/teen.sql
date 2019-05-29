@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-05-28 10:40:03
+Date: 2019-05-29 14:47:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -111,6 +111,7 @@ CREATE TABLE `comment` (
 INSERT INTO `comment` VALUES ('10005', '100523', '这是一条测试评论', '2019-05-11');
 INSERT INTO `comment` VALUES ('10005', '100523', '笨蛋爱上天才，会有结果吗？平凡女孩原湘琴（林允饰）喜欢上了天才少年江直树（王大陆饰），在她表白失败准备放弃之际，爸爸居然带着自己搬进了直树家里？！一个猛追，一个猛逃，热闹欢腾的纯真高中生活就此上演。朝夕相处中，直树渐渐被湘琴乐观的无畏精神吸引，他开始怀疑：湘琴究竟是人生偏差、还是自己的命中注定?', '2019-05-10');
 INSERT INTO `comment` VALUES ('10005', '100524', '这个电影也太无聊了吧，改变不是乱编，差评', '2019-05-02');
+INSERT INTO `comment` VALUES ('10004', '100526', '22222222222222222222222', '2019-05-29');
 
 -- ----------------------------
 -- Table structure for graphic
@@ -213,7 +214,7 @@ CREATE TABLE `post` (
   `create_tm` varchar(255) DEFAULT NULL,
   `topic_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of post
@@ -274,6 +275,35 @@ INSERT INTO `post` VALUES ('132', '大大', '0', '00000000000', null, '100524', 
 INSERT INTO `post` VALUES ('133', '的', '0', '00000000000', null, '100524', '1558885346926', '3');
 INSERT INTO `post` VALUES ('134', '图片图片', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905261543184362.jpg', '100524', '1558885399749', '3');
 INSERT INTO `post` VALUES ('135', '我是血小板', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280237439641.jpg', '100523', '1559011065307', '3');
+INSERT INTO `post` VALUES ('136', '', '1', '00000000000', 'http://teen.com/nuxt/images/post/201905280503374748.jpg,http://teen.com/nuxt/images/post/201905280503388327.jpg,http://teen.com/nuxt/images/post/201905280503405098.jpg,http://teen.com/nuxt/images/post/201905280503428809.jpg,http://teen.com/nuxt/images/pos', '100524', '1559020029283', '1');
+INSERT INTO `post` VALUES ('137', '', '0', '00000000000', '', '100523', '1559024489068', '');
+INSERT INTO `post` VALUES ('138', '', '0', '00000000000', '', '100523', '1559025980396', '1');
+INSERT INTO `post` VALUES ('139', '', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280646233717.jpg', '100523', '1559025985116', '1');
+INSERT INTO `post` VALUES ('140', '', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280648336902.jpg', '100524', '1559026114259', '1');
+INSERT INTO `post` VALUES ('141', '多对多', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280701347127.jpg', '100524', '1559026896203', '1');
+INSERT INTO `post` VALUES ('142', '顶顶顶顶顶', '0', '00000000000', '', '100523', '1559027100458', '1');
+INSERT INTO `post` VALUES ('143', '顶顶顶顶顶', '0', '00000000000', '', '100523', '1559027366522', '1');
+INSERT INTO `post` VALUES ('144', '得的', '0', '00000000000', '', '100523', '1559027387667', '3');
+INSERT INTO `post` VALUES ('145', '得的', '0', '00000000000', '', '100524', '1559027420339', '3');
+INSERT INTO `post` VALUES ('146', '灌灌灌灌灌', '0', '00000000000', '', '100523', '1559027443122', '3');
+INSERT INTO `post` VALUES ('147', '得的', '0', '00000000000', '', '100523', '1559027525491', '3');
+INSERT INTO `post` VALUES ('148', '得的', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280711516672.jpg', '100524', '1559027572157', '3');
+INSERT INTO `post` VALUES ('149', '酷酷酷酷酷酷酷酷酷酷酷酷酷', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280713164863.jpg', '100524', '1559027607330', '3');
+INSERT INTO `post` VALUES ('150', '多对多', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280714472131.jpg', '100524', '1559027757393', '1');
+INSERT INTO `post` VALUES ('151', '哈哈哈', '0', '00000000000', '', '100523', '1559027806521', '1');
+INSERT INTO `post` VALUES ('152', '哈哈哈', '0', '00000000000', '', '100523', '1559027843738', '1');
+INSERT INTO `post` VALUES ('153', '哈哈哈', '0', '00000000000', '', '100524', '1559028010218', '1');
+INSERT INTO `post` VALUES ('154', '哈哈哈', '0', '00000000000', '', '100524', '1559028029690', '1');
+INSERT INTO `post` VALUES ('155', '\n        \n    ', '0', '00000000000', '', '100524', '1559028136402', '1,3');
+INSERT INTO `post` VALUES ('156', 'd\n        \n    ', '0', '00000000000', '', '100523', '1559028923649', '1');
+INSERT INTO `post` VALUES ('157', 'dede', '0', '00000000000', '', '100523', '1559028931529', '1,20');
+INSERT INTO `post` VALUES ('158', 'dede', '0', '00000000000', '', '100523', '1559028945337', '1,3');
+INSERT INTO `post` VALUES ('159', '得得得', '6', '00000000000', 'http://teen.com/nuxt/images/post/201905280735495212.jpg,http://teen.com/nuxt/images/post/201905280735511412.jpg', '100523', '1559028955408', '1');
+INSERT INTO `post` VALUES ('160', '新的话题', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905280832483277.jpg', '100523', '1559032574061', '21');
+INSERT INTO `post` VALUES ('161', '灵能百分百', '0', '00000000000', '', '100523', '1559032648263', '22');
+INSERT INTO `post` VALUES ('162', '灵能百分百', '0', '00000000000', '', '100523', '1559032696111', '23');
+INSERT INTO `post` VALUES ('163', '肖申克的救赎真的很好看', '1', '00000000000', 'http://teen.com/nuxt/images/post/201905281053155477.jpg', '100523', '1559040808127', '1,24');
+INSERT INTO `post` VALUES ('164', 'ded', '0', '00000000000', 'http://teen.com/nuxt/images/post/201905290253246350.jpg', '100526', '1559098411273', '24');
 
 -- ----------------------------
 -- Table structure for post_reply
@@ -286,7 +316,7 @@ CREATE TABLE `post_reply` (
   `post_id` int(11) DEFAULT NULL,
   `create_tm` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of post_reply
@@ -309,6 +339,14 @@ INSERT INTO `post_reply` VALUES ('15', '多对多', '100523', '28', null);
 INSERT INTO `post_reply` VALUES ('16', '添加', '100523', '28', null);
 INSERT INTO `post_reply` VALUES ('17', '添加', '100523', '28', null);
 INSERT INTO `post_reply` VALUES ('18', '知道', '100523', '28', null);
+INSERT INTO `post_reply` VALUES ('19', '是的', '100523', '136', null);
+INSERT INTO `post_reply` VALUES ('20', '我来评论一下', '100523', '159', null);
+INSERT INTO `post_reply` VALUES ('21', '评论', '100523', '159', null);
+INSERT INTO `post_reply` VALUES ('22', '哈哈哈', '100523', '159', '1559029847792');
+INSERT INTO `post_reply` VALUES ('23', '看看看看', '100523', '159', '1559030554345');
+INSERT INTO `post_reply` VALUES ('24', '来了', '100523', '159', '1559030592952');
+INSERT INTO `post_reply` VALUES ('25', '又来了', '100523', '159', '1559040476312');
+INSERT INTO `post_reply` VALUES ('26', '我也觉得不错', '100523', '163', '1559040825752');
 
 -- ----------------------------
 -- Table structure for topic
@@ -326,18 +364,21 @@ CREATE TABLE `topic` (
   `create_tm` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of topic
 -- ----------------------------
-INSERT INTO `topic` VALUES ('1', '', '', null, '0000-00-00', '450', '0', null, '0000-00-00 00:00:00', '肖申克的救赎');
-INSERT INTO `topic` VALUES ('2', '', '', null, '0000-00-00', '150', '0', null, null, '是枝裕和');
-INSERT INTO `topic` VALUES ('3', '', '', null, '0000-00-00', '800', '0', null, '2019-05-12 16:34:21', '大侦探皮卡丘');
-INSERT INTO `topic` VALUES ('5', '', '', null, '0000-00-00', null, null, null, '0000-00-00 00:00:00', '哈哈哈');
-INSERT INTO `topic` VALUES ('8', '', '', null, '0000-00-00', null, null, null, '0000-00-00 00:00:00', '欧克');
-INSERT INTO `topic` VALUES ('17', '', '', null, '0000-00-00', null, null, null, '0000-00-00 00:00:00', '哈哈哈哈哈');
-INSERT INTO `topic` VALUES ('20', '', '', null, '0000-00-00', null, null, null, '0000-00-00 00:00:00', 'de');
+INSERT INTO `topic` VALUES ('1', '', '', null, '0000-00-00', '450', '0', 'http://teen.com/nuxt/images/post/1.jpg', '2019-05-28 16:17:58', '肖申克的救赎');
+INSERT INTO `topic` VALUES ('2', '', '', null, '0000-00-00', '150', '0', 'http://teen.com/nuxt/images/post/2.jpg', '2019-05-28 16:18:04', '是枝裕和');
+INSERT INTO `topic` VALUES ('3', '', '', null, '0000-00-00', '800', '0', 'http://teen.com/nuxt/images/post/3.jpg', '2019-05-28 16:18:07', '大侦探皮卡丘');
+INSERT INTO `topic` VALUES ('5', '', '', null, '0000-00-00', null, null, 'http://teen.com/nuxt/images/post/default.jpg', '2019-05-28 16:20:28', '哈哈哈');
+INSERT INTO `topic` VALUES ('8', '', '', null, '0000-00-00', null, null, 'http://teen.com/nuxt/images/post/default.jpg', '2019-05-28 16:20:30', '欧克');
+INSERT INTO `topic` VALUES ('17', '', '', null, '0000-00-00', null, null, 'http://teen.com/nuxt/images/post/default.jpg', '2019-05-28 16:20:32', '哈哈哈哈哈');
+INSERT INTO `topic` VALUES ('20', '', '', null, '0000-00-00', null, null, 'http://teen.com/nuxt/images/post/default.jpg', '2019-05-28 16:20:33', 'de');
+INSERT INTO `topic` VALUES ('21', '', '', null, '0000-00-00', null, null, 'http://teen.com/nuxt/images/post/201905280832483277.jpg', '0000-00-00 00:00:00', '夏目友人帐');
+INSERT INTO `topic` VALUES ('23', '', '', null, '0000-00-00', null, null, 'http://teen.com/nuxt/images/post/default.jpg', '0000-00-00 00:00:00', '灵能百分百');
+INSERT INTO `topic` VALUES ('24', '', '', null, '0000-00-00', null, null, 'http://teen.com/nuxt/images/post/201905281053155477.jpg', '0000-00-00 00:00:00', '经典电影');
 
 -- ----------------------------
 -- Table structure for user_info
@@ -345,7 +386,7 @@ INSERT INTO `topic` VALUES ('20', '', '', null, '0000-00-00', null, null, null, 
 DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (
   `user_name` varchar(10) NOT NULL,
-  `uid` char(6) NOT NULL,
+  `uid` varchar(50) NOT NULL,
   `account` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `avator` varchar(100) DEFAULT NULL,
@@ -356,8 +397,10 @@ CREATE TABLE `user_info` (
 -- ----------------------------
 -- Records of user_info
 -- ----------------------------
-INSERT INTO `user_info` VALUES ('何超豪', '100524', '5284792@qq.com', '5284792', 'http://mydatabase.com/user/xiaoxin.jpg', '42');
-INSERT INTO `user_info` VALUES ('血小板', '100523', '1414249719@qq.com', '5284792', 'http://mydatabase.com/user/cat.jpg', '23');
+INSERT INTO `user_info` VALUES ('123456', '100525', '123456', '123456', 'http://mydatabase.com/user/corn.png', '0');
+INSERT INTO `user_info` VALUES ('何超豪', '100524', '5284792@qq.com', '5284792', 'http://mydatabase.com/user/E1.png', '42');
+INSERT INTO `user_info` VALUES ('啦啦啦啦啦啦啦', '100526', '啦啦啦啦啦啦啦', 'a123456', 'http://mydatabase.com/user/corn.png', '0');
+INSERT INTO `user_info` VALUES ('血小板', '100523', '1414249719@qq.com', '5284792', 'http://mydatabase.com/user/D1.png', '23');
 
 -- ----------------------------
 -- Table structure for video
@@ -365,7 +408,7 @@ INSERT INTO `user_info` VALUES ('血小板', '100523', '1414249719@qq.com', '528
 DROP TABLE IF EXISTS `video`;
 CREATE TABLE `video` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT '' COMMENT '电影名字',
+  `film_name` varchar(255) DEFAULT '' COMMENT '电影名字',
   `start_time` timestamp NULL DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
   `src` varchar(255) DEFAULT NULL,
@@ -376,8 +419,24 @@ CREATE TABLE `video` (
 -- ----------------------------
 -- Records of video
 -- ----------------------------
-INSERT INTO `video` VALUES ('0', '', null, null, null, null);
-INSERT INTO `video` VALUES ('1', '我，到点下班', '2019-05-26 16:20:00', '2019-05-26 17:57:02', 'http://teen.com/nuxt/videos/1.mp4', '3342');
+INSERT INTO `video` VALUES ('1', '我，到点下班', '2019-05-29 12:00:00', '2019-05-29 13:00:00', 'http://teen.com/nuxt/videos/1.mp4', '3342');
+
+-- ----------------------------
+-- Table structure for viewd_graphic
+-- ----------------------------
+DROP TABLE IF EXISTS `viewd_graphic`;
+CREATE TABLE `viewd_graphic` (
+  `id` int(11) NOT NULL,
+  `graphic_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `progress` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of viewd_graphic
+-- ----------------------------
+INSERT INTO `viewd_graphic` VALUES ('0', '1', '100523', '86.99938027300696');
 
 -- ----------------------------
 -- Table structure for watched_movie
@@ -395,3 +454,4 @@ INSERT INTO `watched_movie` VALUES ('10001', '100523');
 INSERT INTO `watched_movie` VALUES ('10004', '100523');
 INSERT INTO `watched_movie` VALUES ('10019', '100523');
 INSERT INTO `watched_movie` VALUES ('10005', '100523');
+INSERT INTO `watched_movie` VALUES ('10019', '100524');
